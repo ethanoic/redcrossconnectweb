@@ -34,7 +34,8 @@ body {
     min-width: 1200px;
     width: 100%;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    padding-top: 80px; }
 
 a {
   color: #b51419; }
@@ -75,7 +76,11 @@ a {
   background-image: url(../img/top_nav_bg.jpg);
   background-repeat: repeat-x;
   width: 100%;
-  height: 75px; }
+  height: 75px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1001; }
   .top-nav ul {
     margin: 0px;
     padding: 0px;
@@ -229,25 +234,37 @@ a {
     .how-app .app-screen img {
       width: 100%;
       max-width: 299px; }
-  .how-app h1 {
-    text-transform: uppercase;
-    font-family: 'ITCAvantGardeStd-Bk';
-    font-weight: normal;
-    color: #b0aea8;
-    font-size: 4.375em;
-    line-height: 100%;
-    margin: 0px;
-    margin-top: 119px;
-    padding-bottom: 10px; }
-    .how-app h1 .redbold {
-      font-family: 'ITCAvantGardeStd-Demi';
-      color: #b51419; }
+  .how-app .title-text {
+    width: 48.00%;
+    float: right; }
+    .how-app .title-text h1 {
+      text-transform: uppercase;
+      font-family: 'ITCAvantGardeStd-Bk';
+      font-weight: normal;
+      color: #b0aea8;
+      font-size: 4.375em;
+      line-height: 100%;
+      margin: 0px;
+      margin-top: 100px;
+      padding-bottom: 10px; }
+      .how-app .title-text h1 .redbold {
+        font-family: 'ITCAvantGardeStd-Demi';
+        color: #b51419; }
   .how-app .app-links {
-    margin-top: 20px; }
+    width: 48.00%;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 16px; }
     .how-app .app-links a {
+      width: auto;
+      float: left;
+      display: block;
       margin-right: 10px; }
   .how-app .video-link {
+    width: 48.00%;
+    float: left;
     margin-top: 29px;
+    margin-left: 16px;
     display: inline-block; }
   .how-app .app-features {
     margin-left: 67px;
@@ -291,6 +308,8 @@ a {
           max-width: 245px;
           min-width: 150px;
           width: 100%; }
+      .how-app .app-features ul li.vline {
+        border-right: 1px solid #efefef; }
 
 .release-hero {
   background-color: #ebe9e3;
@@ -309,6 +328,18 @@ a {
     width: 262px;
     height: 160px;
     display: inline-block; }
+  .release-hero h2 {
+    font-weight: normal;
+    font-family: 'ITCAvantGardeStd-Bk';
+    font-size: 3.375em;
+    text-transform: uppercase;
+    line-height: 100%;
+    color: #b0aea8;
+    float: left;
+    width: 65%; }
+    .release-hero h2 .redbold {
+      font-family: 'ITCAvantGardeStd-Demi';
+      color: #b51419; }
   .release-hero .right-col {
     float: right;
     width: 820px; }
@@ -336,6 +367,8 @@ a {
   .bloodstats .left-col {
     float: left;
     width: 418px; }
+    .bloodstats .left-col a {
+      display: block; }
     .bloodstats .left-col h2 {
       color: #74726f;
       font-family: 'ITCAvantGardeStd-Bk';
@@ -350,6 +383,8 @@ a {
   .bloodstats .right-col {
     float: right;
     width: 700px; }
+    .bloodstats .right-col a {
+      display: none; }
     .bloodstats .right-col ul {
       list-style: none;
       margin: 0px;
@@ -369,11 +404,14 @@ a {
         .bloodstats .right-col ul li.blood-type-stat h3 {
           font-family: 'ITCAvantGardeStd-Bk';
           font-size: 1.188em;
+          margin: 0px;
           font-weight: normal;
+          padding-bottom: 4px;
+          padding-top: 4px;
           text-transform: uppercase;
           color: #000000; }
-          .bloodstats .right-col ul li.blood-type-stat h3 bloodtype {
-            font-family: 'ITCAvantGardeStd-Md'; }
+          .bloodstats .right-col ul li.blood-type-stat h3 .bloodtype {
+            font-family: 'ITCAvantGardeStd-Bold'; }
         .bloodstats .right-col ul li.blood-type-stat .chart-container {
           width: 127px;
           height: 110px; }
@@ -757,6 +795,7 @@ a {
 
   .top-nav {
     position: fixed;
+    z-index: 1000;
     top: 0px;
     left: 0px;
     height: 45px;
@@ -796,42 +835,49 @@ a {
 
   .how-app .cta-share {
     display: none; }
+  .how-app .title-text {
+    width: 100%;
+    clear: both; }
+    .how-app .title-text h1 {
+      margin-top: 10px;
+      clear: both;
+      width: 100%;
+      font-size: 2.5em;
+      text-align: center; }
+    .how-app .title-text p {
+      display: block;
+      float: left;
+      width: 100%;
+      text-align: center; }
   .how-app .app-screen {
-    min-width: 220px;
-    width: 220px;
+    width: 35%;
     margin-left: auto;
     margin-right: auto;
-    float: none;
-    margin-top: 10px; }
-  .how-app h1 {
+    float: left;
     margin-top: 10px;
-    float: left;
-    width: 100%;
-    font-size: 2.5em;
-    text-align: center; }
-  .how-app p {
-    display: block;
-    float: left;
-    width: 100%;
-    text-align: center; }
+    padding-left: 10%; }
   .how-app .app-links {
+    margin: 0px;
     display: block;
     margin-top: 0px;
     padding-bottom: 10px;
-    padding-top: 10px;
-    width: 100%;
-    float: left;
+    padding-top: 35px;
+    width: 45%;
+    float: right;
     text-align: center; }
     .how-app .app-links a {
-      width: 50%;
-      float: left;
+      width: 100%;
+      clear: both;
       margin: 0px;
-      display: block; }
+      display: block;
+      margin-bottom: 10px; }
   .how-app .video-link {
+    margin: 0px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 45%;
+    float: right;
     text-align: center; }
     .how-app .video-link img {
       width: 100%; }
@@ -839,19 +885,43 @@ a {
     margin-left: 0px;
     width: 99.5%;
     text-align: center; }
+    .how-app .app-features h2 {
+      padding-bottom: 10px;
+      font-size: 1.2em; }
     .how-app .app-features ul li {
-      width: 50%; }
+      font-family: 'ITCAvantGardeStd-Bk';
+      font-size: 0.8em;
+      width: 40%;
+      padding-left: 4%;
+      padding-right: 4%;
+      margin-bottom: 10px; }
+    .how-app .app-features ul li.vline {
+      border: none; }
+    .how-app .app-features ul li.mvline {
+      border-right: 1px solid #dddddd; }
 
   .release-hero {
     display: block;
-    background-image: none;
-    height: 430px; }
+    height: 505px;
+    background-position: 185% 2px;
+    background-size: 71%; }
     .release-hero h1 {
       margin-left: 0px;
       text-align: center;
-      width: 100%;
+      width: 50%;
       float: left;
-      background-position: top center; }
+      background-position: top center;
+      background-size: contain;
+      height: 125px; }
+    .release-hero h2 {
+      float: left;
+      display: block;
+      width: 100%;
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 10px; }
+      .release-hero h2 br {
+        display: inline; }
     .release-hero .right-col {
       width: 100%; }
       .release-hero .right-col .video-player {
@@ -866,6 +936,7 @@ a {
       .release-hero .right-col .btn-share-now {
         margin-top: 5px;
         float: none;
+        clear: both;
         margin-left: auto;
         margin-right: auto;
         display: block; }
@@ -890,16 +961,26 @@ a {
   .bloodstats .left-col {
     width: 100%;
     text-align: center; }
+    .bloodstats .left-col a {
+      display: none; }
   .bloodstats .right-col {
     width: 100%; }
-    .bloodstats .right-col ul li.blood-type-stat {
-      width: 50%;
-      margin: 0px;
-      margin-bottom: 10px;
-      background-position: bottom center; }
-      .bloodstats .right-col ul li.blood-type-stat span.status {
-        width: 160px;
-        height: 125px; }
+    .bloodstats .right-col ul {
+      margin-top: 10px; }
+      .bloodstats .right-col ul li.blood-type-stat {
+        height: auto;
+        width: 50%;
+        margin: 0px;
+        margin-bottom: 10px;
+        background-position: bottom center; }
+        .bloodstats .right-col ul li.blood-type-stat .chart-container {
+          width: 150px;
+          height: 113px;
+          margin-left: auto;
+          margin-right: auto; }
+    .bloodstats .right-col a {
+      display: block;
+      text-align: center; }
 
   .where h1 {
     font-size: 2.5em;

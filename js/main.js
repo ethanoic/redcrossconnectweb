@@ -165,9 +165,16 @@ $(document).ready(function() {
 	{
 	  directionsDisplay = new google.maps.DirectionsRenderer();
 
-	  var elementmap = $('.for-mobile:visible').size() != 0 ? document.getElementById("mobilemap") : document.getElementById("desktopmap");
+	  //var elementmap = $('.for-mobile:visible').size() != 0 ? document.getElementById("mobilemap") : document.getElementById("desktopmap");
 
-	  map = new google.maps.Map(elementmap,mapProp);
+	  map = new google.maps.Map(document.getElementById("mobilemap") ,mapProp);
+	  directionsDisplay.setMap(map);
+
+	  setMarker(new google.maps.LatLng(locations[0].lat, locations[0].lng), map, contentInfo1);
+	  setMarker(new google.maps.LatLng(locations[1].lat, locations[1].lng), map, contentInfo2);
+	  setMarker(new google.maps.LatLng(locations[2].lat, locations[2].lng), map, contentInfo3);
+
+	  map = new google.maps.Map(document.getElementById("desktopmap") ,mapProp);
 	  directionsDisplay.setMap(map);
 
 	  setMarker(new google.maps.LatLng(locations[0].lat, locations[0].lng), map, contentInfo1);
@@ -331,10 +338,10 @@ $(document).ready(function() {
 	    	var bloodstat = data.split('-');
 
 	    	// hard code for now until the php to google spreadsheet is fixed
-	    	bloodstat[0] = 50;
-	    	bloodstat[1] = 50;
-	    	bloodstat[2] = 75;
-	    	bloodstat[3] = 25;
+	    	bloodstat[0] = '50';
+	    	bloodstat[1] = '50';
+	    	bloodstat[2] = '75';
+	    	bloodstat[3] = '25';
 
 	        $('.blood-a .chart').attr('data-percent', bloodstat[0]);
 	        $('.blood-b .chart').attr('data-percent', bloodstat[1]);
@@ -357,5 +364,8 @@ $(document).ready(function() {
 
 	    }
 	});
+	
+	var image_path = $('.site-share .st_sharethis_custom').attr('st_image');
+	$('.site-share .st_sharethis_custom').attr('st_image', 'http://' + window.location.host + '/' + image_path);
 
 });

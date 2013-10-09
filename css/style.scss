@@ -55,6 +55,7 @@ body {
 		width:100%;
 		margin-left:auto;
 		margin-right:auto;
+		padding-top: 80px;
 	}
 }
 a {
@@ -104,6 +105,10 @@ a {
 	background-repeat: repeat-x;
 	width:100%;
 	height:75px;
+	position: fixed;
+	left:0px;
+	top:0px;
+	z-index: 1001;
 
 	ul {
 		margin:0px;
@@ -303,33 +308,51 @@ a {
 			max-width:299px;
 		}
 	}
-	
-	h1 {
-		text-transform: uppercase;
-		font-family: 'ITCAvantGardeStd-Bk';
-		font-weight: normal;
-		color:#b0aea8;
-		font-size: 4.375em;
-		line-height: 100%;
-		margin: 0px;
-		margin-top:119px;
-		padding-bottom: 10px;
 
-		.redbold {
-			font-family: 'ITCAvantGardeStd-Demi';
-			color:#b51419;
+	.title-text {
+		width:48.00%;
+		float:right;
+		
+		h1 {
+
+			text-transform: uppercase;
+			font-family: 'ITCAvantGardeStd-Bk';
+			font-weight: normal;
+			color:#b0aea8;
+			font-size: 4.375em;
+			line-height: 100%;
+			margin: 0px;
+			margin-top: 100px;
+			padding-bottom: 10px;
+
+			.redbold {
+				font-family: 'ITCAvantGardeStd-Demi';
+				color:#b51419;
+			}
+		}
+
+		p {
 		}
 	}
-
 	.app-links {
+		width:48.00%;
+		display: inline-block;
 		margin-top:20px;
+		margin-left: 16px;
+
 		a {
+			width:auto;
+			float:left;
+			display: block;
 			margin-right:10px;
 		}
 	}
 
 	.video-link {
+		width:48.00%;
+		float: left;
 		margin-top:29px;
+		margin-left: 16px;
 		display: inline-block;
 	}
 
@@ -383,6 +406,10 @@ a {
 					width:100%;
 				}
 			}
+
+			li.vline {
+				border-right:1px solid #efefef;
+			}
 		}
 	}
 }	
@@ -405,6 +432,20 @@ a {
 		width:262px;
 		height:160px;
 		display: inline-block;
+	}
+	h2 {
+		font-weight: normal;
+		font-family: 'ITCAvantGardeStd-Bk';
+		font-size: 3.375em;
+		text-transform: uppercase;
+		line-height: 100%;
+		color:#b0aea8;
+		float:left;
+		width:65%;
+		.redbold {
+			font-family: 'ITCAvantGardeStd-Demi';
+			color:#b51419;
+		}
 	}
 	.right-col {
 		float:right;
@@ -443,6 +484,10 @@ a {
 		float:left;
 		width:418px;
 
+		a {
+			display: block;
+		}
+
 		h2 {
 			color:#74726f;
 			font-family: 'ITCAvantGardeStd-Bk';
@@ -462,6 +507,9 @@ a {
 	.right-col {
 		float:right;
 		width:700px;
+		a {
+			display: none;
+		}
 
 		ul {
 			list-style: none;
@@ -485,11 +533,14 @@ a {
 				h3 {
 					font-family: 'ITCAvantGardeStd-Bk';
 					font-size: 1.188em;
+					margin: 0px;
 					font-weight: normal;
+					padding-bottom: 4px;
+					padding-top: 4px;
 					text-transform: uppercase;
 					color:#000000;
-					bloodtype {
-						font-family: 'ITCAvantGardeStd-Md';
+					.bloodtype {
+						font-family: 'ITCAvantGardeStd-Bold';
 					}
 				}
 				.chart-container {
@@ -985,6 +1036,7 @@ a {
 
 	.top-nav {
 		position: fixed;
+		z-index: 1000;
 		top:0px;
 		left:0px;
 		height:45px;
@@ -1033,51 +1085,60 @@ a {
 			display: none;
 		}
 
+		.title-text {
+			width:100%;
+			clear:both;
+
+			h1 {
+				margin-top:10px;
+				clear:both;
+				width:100%;
+				font-size: 2.5em;
+				text-align: center;
+			}
+
+			p {
+				display: block;
+				float:left;
+				width:100%;
+				text-align: center;
+			}
+		}
 		.app-screen {
-			min-width:220px;
-			width:220px;
+			width:35%;
 			margin-left: auto;
 			margin-right: auto;
-			float:none;
+			float:left;
 			margin-top: 10px;
+			padding-left: 10%;
 		}
 
-		h1 {
-			margin-top:10px;
-			float:left;
-			width:100%;
-			font-size: 2.5em;
-			text-align: center;
-		}
-
-		p {
-			display: block;
-			float:left;
-			width:100%;
-			text-align: center;
-		}
 
 		.app-links {
+			margin: 0px;
 			display: block;
 			margin-top: 0px;
 			padding-bottom: 10px;
-			padding-top: 10px;
-			width:100%;
-			float:left;
+			padding-top: 35px;
+			width:45%;
+			float:right;
 			text-align: center;
 			a {
-				width:50%;
-				float:left;
+				width:100%;
+				clear:both;
 				margin: 0px;
 				display: block;
+				margin-bottom: 10px;
 			}
 		}
 
 		.video-link {
+			margin: 0px;
 			display: block;
 			margin-left:auto;
 			margin-right:auto;
-			width:100%;
+			width:45%;
+			float:right;
 			text-align: center;
 			img {
 				width:100%;
@@ -1089,9 +1150,26 @@ a {
 			width:99.5%;
 			text-align: center;
 
+			h2 {
+				padding-bottom: 10px;
+				font-size:1.2em;
+			}
+
 			ul {
+					
 				li {
-					width:50%;
+					font-family: 'ITCAvantGardeStd-Bk';
+					font-size:0.8em;
+					width:40%;
+					padding-left: 4%;
+					padding-right: 4%;
+					margin-bottom: 10px;
+				}
+				li.vline {
+					border: none;
+				}
+				li.mvline {
+					border-right: 1px solid #dddddd;
 				}
 			}
 		}
@@ -1099,15 +1177,32 @@ a {
 
 	.release-hero {
 		display: block;
-		background-image: none;
-		height:430px;
+		
+		height:505px;
+		background-position: 185% 2px;
+		background-size: 71%;
 
 		h1 {
 			margin-left:0px;
 			text-align: center;
-			width:100%;
+			width:50%;
 			float:left;
 			background-position: top center;
+			background-size: contain;
+			height: 125px;
+		}
+
+		h2 {
+			float:left;
+			display: block;
+			width:100%;
+			font-size: 2em;
+			text-align: center;
+			margin-bottom: 10px;
+
+			br {
+				display: inline;
+			}
 		}
 
 		.right-col {
@@ -1129,6 +1224,7 @@ a {
 			.btn-share-now {
 				margin-top: 5px;
 				float:none;
+				clear:both;
 				margin-left: auto;
 				margin-right: auto;
 				display: block;
@@ -1164,7 +1260,9 @@ a {
 		.left-col {
 			width:100%;
 			text-align: center;
-
+			a {
+				display: none;
+			}
 			h2 {
 			}
 
@@ -1173,16 +1271,25 @@ a {
 			width:100%;
 
 			ul {
+				margin-top: 10px;
 				li.blood-type-stat {
+					height: auto;
 					width:50%;
 					margin: 0px;
 					margin-bottom: 10px;
 					background-position: bottom center;
-					span.status {
-						width:160px;
-						height:125px;
+
+					.chart-container {
+						width:150px;
+						height:113px;
+						margin-left: auto;
+						margin-right: auto;
 					}
 				}
+			}
+			a {
+				display: block;
+				text-align: center;
 			}
 		}
 	}

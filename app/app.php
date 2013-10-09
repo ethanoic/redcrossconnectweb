@@ -21,11 +21,11 @@ if (isset($_POST['email'])) {
 			   	"Subject: ".$_POST['subject']."<br/>".
 			   	"Message<br/>: ".$_POST['message']."<br/>";
 
-	$mail->SetFrom('enquiry@redcross.org.sg', 'Red Cross Connect');
+	$mail->SetFrom('enquiry@redcross.org.sg', 'Red Cross Connection');
 	$mail->Subject = "Contact Us Form";
 	$mail->MsgHTML($message);
 
-	$mail->AddAddress('enquiry@redcross.org.sg', 'Red Cross Connect Enquiry');
+	$mail->AddAddress('enquiry@redcross.org.sg', 'Red Cross Connection');
 	$mail->AddAddress($_POST['email'], $_POST['name']);
 	$mail->addCC('christy.goh@mrmworldwide.com');
 	$mail->addCC('ethan.ccj@gmail.com');
