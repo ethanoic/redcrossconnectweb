@@ -47,6 +47,7 @@ body {
 	font-family: 'ITCAvantGardeStd-Bk';
 	font-size: 0.875em;
 	line-height: 180%;
+	padding-top: 70px;
 	margin: 0px;
 
 	.page-container {
@@ -55,7 +56,6 @@ body {
 		width:100%;
 		margin-left:auto;
 		margin-right:auto;
-		padding-top: 80px;
 	}
 }
 a {
@@ -319,7 +319,7 @@ a {
 			font-family: 'ITCAvantGardeStd-Bk';
 			font-weight: normal;
 			color:#b0aea8;
-			font-size: 4.375em;
+			font-size: 5em;
 			line-height: 100%;
 			margin: 0px;
 			margin-top: 100px;
@@ -332,6 +332,7 @@ a {
 		}
 
 		p {
+			letter-spacing: 1px;
 		}
 	}
 	.app-links {
@@ -608,7 +609,7 @@ a {
 		font-family: 'ITCAvantGardeStd-Bk';
 		font-weight: normal;
 		color:#b0aea8;
-		font-size: 4.375em;
+		font-size: 5em;
 		line-height: 100%;
 		margin: 0px;
 		padding-bottom: 10px;
@@ -831,6 +832,7 @@ a {
 
 .faq {
 	padding-left: 60px;
+	margin-top: -30px;
 
 	.left-col {
 		float:left;
@@ -849,15 +851,23 @@ a {
 
 		.faq-category {
 			margin-left:32px;
-			a {
-				display: inline-block;
-				width:100%;
-				background-image: url(../img/small-red-cross.png);
-				background-repeat: no-repeat;
-				padding-left: 24px;
-				background-position: left center;
-				color:grey;
-				text-decoration: none;
+			ul {
+				list-style: none;
+				padding: 0px;
+				margin: 0px;
+				li {
+					list-style: none;
+					padding: 0px;
+					margin: 0px;
+					a {
+						background-image: url(../img/small-red-cross.png);
+						background-repeat: no-repeat;
+						padding-left: 24px;
+						background-position: left center;
+						color:grey;
+						text-decoration: none;
+					}
+				}
 			}
 		}
 	}
@@ -868,7 +878,7 @@ a {
 		height: 571px;
 		background-image: url(../img/faq_hero_img.jpg);
 		background-repeat: no-repeat;
-		background-position: 0px -20px;
+		background-position: 0px 0px;
 	}
 
 }
@@ -914,7 +924,8 @@ a {
 
 }
 
-.category-section:nth-child(even) {
+.category-section:nth-child(even),
+.category-section.altgrey {
 	background-color: #ebe9e3;
 }
 .clear-fix {
@@ -1232,29 +1243,6 @@ a {
 		}
 	}
 
-	.where {
-		height:800px;
-
-		.left-col {
-			width:100%;
-			display: block;
-
-			.googlemap {
-				width:100%;
-				height:250px;
-				margin-top: 15px;
-			}
-		}
-		.right-col {
-			width:100%;
-			display: block;
-			margin-left: 0px;
-			margin-top: 10px;
-			.googlemap {
-				height:250px;
-			}
-		}
-	}
 
 	.bloodstats {
 		.left-col {
@@ -1294,12 +1282,43 @@ a {
 		}
 	}
 
+
 	.where {
+		text-align: center;
+		height: 960px;
+
 		h1 {
-			font-size:2.5em;
+			font-size:3em;
 			text-align: center;
+			line-height: 120%;
+			padding-top: 20px;
+		}
+		.left-col {
+			width:100%;
+			display: block;
+
+			select {
+				display: block;
+				margin-left:auto;
+				margin-right: auto;
+			}
+			.btn-appt {
+				display: block;
+				margin-left:auto;
+				margin-right: auto;
+			}
+
+			.googlemap {
+				width:100%;
+				height:350px;
+				margin-top: 15px;
+			}
 		}
 		.right-col {
+			width:100%;
+			display: block;
+			margin-left: 0px;
+			margin-top: 10px;
 		}
 	}
 
@@ -1315,6 +1334,9 @@ a {
 		}
 		.fb-facepile {
 			margin-top:0px;
+		}
+		.footer-image {
+			display: none;
 		}
 	}
 

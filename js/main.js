@@ -97,7 +97,7 @@ $(document).ready(function() {
 	var contentInfo1 =
 	'<div class="info-content">'+
 	'<div class="pull-left">'+
-	'<img src="img/red-cross.png">'+
+	'<img src="img/logo-sgredcross.png">'+
 	'</div>'+
 	'<div class="infowindow pull-right">'+
 	'<p><b>Bloodbank@HSA</b><br/>'+
@@ -112,7 +112,7 @@ $(document).ready(function() {
 	var contentInfo2 =
 	'<div class="info-content">'+
 	'<div class="pull-left">'+
-	'<img src="img/red-cross.png">'+
+	'<img src="img/logo-sgredcross.png">'+
 	'</div>'+
 	'<div class="infowindow pull-right">'+
 	'<p><b>Bloodbank@Woodlands</b><br/>'+
@@ -126,7 +126,7 @@ $(document).ready(function() {
 	var contentInfo3 =
 	'<div class="info-content">'+
 	'<div class="pull-left">'+
-	'<img src="img/red-cross.png">'+
+	'<img src="img/logo-sgredcross.png">'+
 	'</div>'+
 	'<div class="infowindow pull-right">'+
 	'<p><b>Bloodbank@Dhoby Ghaut</b><br/>'+
@@ -358,6 +358,7 @@ $(document).ready(function() {
 				lineWidth: lineChartWidth,
 				barColor: '#c1272c',
 				trackColor:'#e1e1e1',
+				scaleColor: false,
 				size: chartsize ,
 			});
 

@@ -28,14 +28,14 @@ body {
   font-family: 'ITCAvantGardeStd-Bk';
   font-size: 0.875em;
   line-height: 180%;
+  padding-top: 70px;
   margin: 0px; }
   body .page-container {
     max-width: 1200px;
     min-width: 1200px;
     width: 100%;
     margin-left: auto;
-    margin-right: auto;
-    padding-top: 80px; }
+    margin-right: auto; }
 
 a {
   color: #b51419; }
@@ -242,7 +242,7 @@ a {
       font-family: 'ITCAvantGardeStd-Bk';
       font-weight: normal;
       color: #b0aea8;
-      font-size: 4.375em;
+      font-size: 5em;
       line-height: 100%;
       margin: 0px;
       margin-top: 100px;
@@ -250,6 +250,8 @@ a {
       .how-app .title-text h1 .redbold {
         font-family: 'ITCAvantGardeStd-Demi';
         color: #b51419; }
+    .how-app .title-text p {
+      letter-spacing: 1px; }
   .how-app .app-links {
     width: 48.00%;
     display: inline-block;
@@ -463,7 +465,7 @@ a {
     font-family: 'ITCAvantGardeStd-Bk';
     font-weight: normal;
     color: #b0aea8;
-    font-size: 4.375em;
+    font-size: 5em;
     line-height: 100%;
     margin: 0px;
     padding-bottom: 10px; }
@@ -645,7 +647,8 @@ a {
     margin: 0px; }
 
 .faq {
-  padding-left: 60px; }
+  padding-left: 60px;
+  margin-top: -30px; }
   .faq .left-col {
     float: left;
     width: 680px; }
@@ -660,22 +663,28 @@ a {
       margin-bottom: 16px; }
     .faq .left-col .faq-category {
       margin-left: 32px; }
-      .faq .left-col .faq-category a {
-        display: inline-block;
-        width: 100%;
-        background-image: url(../img/small-red-cross.png);
-        background-repeat: no-repeat;
-        padding-left: 24px;
-        background-position: left center;
-        color: grey;
-        text-decoration: none; }
+      .faq .left-col .faq-category ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px; }
+        .faq .left-col .faq-category ul li {
+          list-style: none;
+          padding: 0px;
+          margin: 0px; }
+          .faq .left-col .faq-category ul li a {
+            background-image: url(../img/small-red-cross.png);
+            background-repeat: no-repeat;
+            padding-left: 24px;
+            background-position: left center;
+            color: grey;
+            text-decoration: none; }
   .faq .cover-img {
     float: right;
     width: 449px;
     height: 571px;
     background-image: url(../img/faq_hero_img.jpg);
     background-repeat: no-repeat;
-    background-position: 0px -20px; }
+    background-position: 0px 0px; }
 
 .category-section {
   padding-left: 60px;
@@ -705,7 +714,8 @@ a {
       .category-section ul.faqlist li div {
         display: none; }
 
-.category-section:nth-child(even) {
+.category-section:nth-child(even),
+.category-section.altgrey {
   background-color: #ebe9e3; }
 
 .clear-fix {
@@ -941,23 +951,6 @@ a {
         margin-right: auto;
         display: block; }
 
-  .where {
-    height: 800px; }
-    .where .left-col {
-      width: 100%;
-      display: block; }
-      .where .left-col .googlemap {
-        width: 100%;
-        height: 250px;
-        margin-top: 15px; }
-    .where .right-col {
-      width: 100%;
-      display: block;
-      margin-left: 0px;
-      margin-top: 10px; }
-      .where .right-col .googlemap {
-        height: 250px; }
-
   .bloodstats .left-col {
     width: 100%;
     text-align: center; }
@@ -982,9 +975,34 @@ a {
       display: block;
       text-align: center; }
 
-  .where h1 {
-    font-size: 2.5em;
-    text-align: center; }
+  .where {
+    text-align: center;
+    height: 960px; }
+    .where h1 {
+      font-size: 3em;
+      text-align: center;
+      line-height: 120%;
+      padding-top: 20px; }
+    .where .left-col {
+      width: 100%;
+      display: block; }
+      .where .left-col select {
+        display: block;
+        margin-left: auto;
+        margin-right: auto; }
+      .where .left-col .btn-appt {
+        display: block;
+        margin-left: auto;
+        margin-right: auto; }
+      .where .left-col .googlemap {
+        width: 100%;
+        height: 350px;
+        margin-top: 15px; }
+    .where .right-col {
+      width: 100%;
+      display: block;
+      margin-left: 0px;
+      margin-top: 10px; }
 
   .facebook {
     margin-top: 0px;
@@ -995,6 +1013,8 @@ a {
       overflow: hidden; }
     .facebook .fb-facepile {
       margin-top: 0px; }
+    .facebook .footer-image {
+      display: none; }
 
   .faq .left-col {
     width: 100%; }
