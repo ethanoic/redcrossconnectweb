@@ -353,13 +353,18 @@ $(document).ready(function() {
 	        $('.blood-o .status label').html( setbloodstat_text(bloodstat[2]) );
 	        $('.blood-ab .status label').html( setbloodstat_text(bloodstat[3]) );
 
+	        $('.blood-a .chart').addClass( setbloodstat_text(bloodstat[0]).replace('<br/>','-') );
+	        $('.blood-b .chart').addClass( setbloodstat_text(bloodstat[1]).replace('<br/>','-') );
+	        $('.blood-o .chart').addClass( setbloodstat_text(bloodstat[2]).replace('<br/>','-') );
+	        $('.blood-ab .chart').addClass( setbloodstat_text(bloodstat[3]).replace('<br/>','-') );
+
 			$('.chart').easyPieChart({
 				animate: 2000,
 				lineWidth: lineChartWidth,
 				barColor: '#c1272c',
 				trackColor:'#e1e1e1',
 				scaleColor: false,
-				size: chartsize ,
+				size: chartsize
 			});
 
 

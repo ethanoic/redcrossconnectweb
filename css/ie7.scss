@@ -1,0 +1,101 @@
+/* IE7 Styles */
+
+.how-app {
+
+	.app-links {
+		padding-left:16px;
+	}
+
+}
+
+.release-hero {
+	display: block;
+	width:1200px;
+
+	h1 {
+		display: block;
+		float:left;
+	}
+	h2 {
+		display: block;
+		width:533px;
+		float:left;
+	}
+
+}
+
+.bloodstats {
+	.right-col {
+		display: block;
+		float:left;
+
+		ul {
+			li.blood-type-stat {
+				display: block;
+				float:left;
+				width:165px;
+				margin: 0px;
+				padding: 0px;
+
+				h3 {
+					float:left;
+					display: block;
+					width:135px;
+					text-align: center;
+					margin: 0px;
+					.bloodtype { 
+						font-weight: bold;
+					}
+				}
+				.chart-container {
+					display: block;
+					float:left;
+					width:135px;
+					margin: 0px;
+					padding: 0px;
+
+					.markers {
+						display: block;
+						width: inherit;
+						height: inherit;
+						position: absolute;
+
+						z-index: 3;
+					}
+					.status {
+					margin: 0px;
+					padding: 0px;
+					margin-left: -65px;
+						width:135px;
+						height:100px;
+						vertical-align: middle;
+
+						label {
+							display: block;
+							margin-top:40%;
+							font-weight: bold;
+						}
+					}
+					.chart {
+						margin: 0px;
+						padding: 0px;
+						margin-left: -65px;
+						width:135px;
+						height: 135px;
+						background-repeat: no-repeat;
+						background-position: center center;
+					}
+					.chart.very-low {
+						background-image:url(../img/blood_verylow.jpg);
+					}
+					.chart.low {
+						background-image:url(../img/blood_low.jpg);
+					}
+					.chart.healthy {
+						background-image:url(../img/blood_healthy.jpg);
+					}
+				}
+			}
+		}
+	}
+}

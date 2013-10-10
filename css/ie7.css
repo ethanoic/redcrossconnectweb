@@ -1,1 +1,69 @@
 /* IE7 Styles */
+.how-app .app-links {
+  padding-left: 16px; }
+
+.release-hero {
+  display: block;
+  width: 1200px; }
+  .release-hero h1 {
+    display: block;
+    float: left; }
+  .release-hero h2 {
+    display: block;
+    width: 533px;
+    float: left; }
+
+.bloodstats .right-col {
+  display: block;
+  float: left; }
+  .bloodstats .right-col ul li.blood-type-stat {
+    display: block;
+    float: left;
+    width: 165px;
+    margin: 0px;
+    padding: 0px; }
+    .bloodstats .right-col ul li.blood-type-stat h3 {
+      float: left;
+      display: block;
+      width: 135px;
+      text-align: center;
+      margin: 0px; }
+      .bloodstats .right-col ul li.blood-type-stat h3 .bloodtype {
+        font-weight: bold; }
+    .bloodstats .right-col ul li.blood-type-stat .chart-container {
+      display: block;
+      float: left;
+      width: 135px;
+      margin: 0px;
+      padding: 0px; }
+      .bloodstats .right-col ul li.blood-type-stat .chart-container .markers {
+        display: block;
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        z-index: 3; }
+      .bloodstats .right-col ul li.blood-type-stat .chart-container .status {
+        margin: 0px;
+        padding: 0px;
+        margin-left: -65px;
+        width: 135px;
+        height: 100px;
+        vertical-align: middle; }
+        .bloodstats .right-col ul li.blood-type-stat .chart-container .status label {
+          display: block;
+          margin-top: 40%;
+          font-weight: bold; }
+      .bloodstats .right-col ul li.blood-type-stat .chart-container .chart {
+        margin: 0px;
+        padding: 0px;
+        margin-left: -65px;
+        width: 135px;
+        height: 135px;
+        background-repeat: no-repeat;
+        background-position: center center; }
+      .bloodstats .right-col ul li.blood-type-stat .chart-container .chart.very-low {
+        background-image: url(../img/blood_verylow.jpg); }
+      .bloodstats .right-col ul li.blood-type-stat .chart-container .chart.low {
+        background-image: url(../img/blood_low.jpg); }
+      .bloodstats .right-col ul li.blood-type-stat .chart-container .chart.healthy {
+        background-image: url(../img/blood_healthy.jpg); }

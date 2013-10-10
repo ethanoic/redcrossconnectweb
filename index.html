@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
 
-        <!--[if lt IE 7]>
+        <!--[if lte IE 7]>
         <link rel="stylesheet" href="css/ie7.css">
         <![endif]-->
 
@@ -120,7 +120,7 @@
                         <!--
                         width="820" height="415" 
                         -->
-                        <iframe src="//www.youtube.com/embed/rY4PCajYhVc?rel=0&wmode=opaque" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="//www.youtube.com/embed/rY4PCajYhVc?rel=0&wmode=opaque&autohide=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <h2>
                         Together, we can<br/>
@@ -221,7 +221,7 @@
                     <a href="http://www.facebook.com/sgredcross/app_253871564648008" target="_blank" class="btn-appt"></a>
                 </div>
                 <div class="right-col">
-                    <div id="desktopmap" class="googlemap for-desktop"></div>
+                    <div id="desktopmap" class="googlemap for-desktop" width="100%" height="400px"></div>
                 </div>
 
             </div>
@@ -257,6 +257,10 @@
         <script src="js/vendor/parsley.min.js"></script>
         <script src="js/vendor/excanvas.compiled.js"></script>
         <script type="text/javascript" src="js/vendor/jquery.easypiechart.min.js"></script>
+        
+        <!--[if lte IE 8]>
+        <script src="js/vendor/excanvas.js"></script>
+        <![endif]-->
 
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA3GNgLX_NhhiEKAiy716EomMg_DwGZ_1s&sensor=false"></script>
 
