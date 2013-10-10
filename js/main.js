@@ -215,7 +215,7 @@ $(document).ready(function() {
 	captcha = generate(5).toUpperCase();
 	$('.captcha').html(captcha);
 
-	$('.contactus').load( "contact.html", function() {
+	$('.contactus').load( "contact.html?rn=" + Math.random()*100, function() {
 		var contact_content = $('#contact-content').html();
 		$('.contactus').html('');
 
@@ -225,7 +225,10 @@ $(document).ready(function() {
 			'transitionOut' : 'none',
 			'type' : 'html',
 			afterShow: function(current, previous) {
-				console.log('form open');
+
+				$('.contact-form *').show();
+
+				//console.log('form open');
 				captcha = generate(5).toUpperCase();
 
 				$('.captcha').html(captcha);

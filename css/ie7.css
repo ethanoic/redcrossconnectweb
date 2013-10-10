@@ -61,9 +61,24 @@
         height: 135px;
         background-repeat: no-repeat;
         background-position: center center; }
+        .bloodstats .right-col ul li.blood-type-stat .chart-container .chart canvas {
+          display: none; }
       .bloodstats .right-col ul li.blood-type-stat .chart-container .chart.very-low {
         background-image: url(../img/blood_verylow.jpg); }
       .bloodstats .right-col ul li.blood-type-stat .chart-container .chart.low {
         background-image: url(../img/blood_low.jpg); }
       .bloodstats .right-col ul li.blood-type-stat .chart-container .chart.healthy {
         background-image: url(../img/blood_healthy.jpg); }
+
+.contact-form {
+  height: 500px;
+  width: 800px; }
+
+.form1 .fieldset {
+  border: 1px solid red; }
+
+.form1 .row {
+  height: 65px; }
+
+.altgrey {
+  background-color: #ebe9e3; }

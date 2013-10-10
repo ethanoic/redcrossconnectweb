@@ -84,6 +84,9 @@
 						height: 135px;
 						background-repeat: no-repeat;
 						background-position: center center;
+						canvas {
+							display: none;
+						}
 					}
 					.chart.very-low {
 						background-image:url(../img/blood_verylow.jpg);
@@ -98,4 +101,21 @@
 			}
 		}
 	}
+}
+
+.contact-form {
+	height: 500px;
+	width:800px;
+}
+
+.form1 .fieldset {
+	border:1px solid red;
+}
+
+.form1 .row {
+	height: 65px;
+}
+
+.altgrey {
+	background-color: #ebe9e3;
 }

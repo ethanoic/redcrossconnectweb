@@ -74,22 +74,20 @@ a {
 }
 
 .logo-redcrossconnect {
-	background-image:url(../img/logo.png);
-	background-repeat: no-repeat;
-	max-width:226px;
+	width:175px;
 	max-height:55px;
-	min-width:200px;
 	min-height: 75px;
 	margin-left:19px;
 	display: inline-block;
 	float:left;
 	margin-top: 7px;
+	img {
+		width:100%;
+	}
 }
 
 
 .logo-sgredcross {
-	background-image:url(../img/logo-sgredcross.png);
-	background-repeat: no-repeat;
 	display: inline-block;
 	width:49px;
 	height:49px;
@@ -97,6 +95,9 @@ a {
 	float:right;
 	margin-right:19px;
 	margin-top: 7px;
+	img {
+		width:100%;
+	}
 }
 
 
@@ -123,14 +124,11 @@ a {
 		li {
 			margin:0px;
 			padding:0px;
-			padding-top: 20px;
 			list-style:none;
 			display:inline-block;
-			height:49px;
+			height:69px;
 
 			width:auto;
-			padding-left:2.5%;
-			padding-right:2.5%;
 			float:left;
 
 			a {
@@ -138,6 +136,10 @@ a {
 				text-decoration: none;
 				color:#000000;
 				display: block;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 20px;
+				height: 49px;
 
 				span {
 					height:30px;
@@ -730,6 +732,7 @@ a {
 	width:100%;
 	display: inline-block;
 	background: #9c1824 url("../img/contact-header-bg.png");
+	border:1px solid red;
 }
 .contact-form .contact-header span {
 	font-weight: 100;
@@ -869,6 +872,7 @@ a {
 						background-position: left center;
 						color:grey;
 						text-decoration: none;
+						line-height: 100%;
 					}
 				}
 			}
@@ -1024,19 +1028,19 @@ a {
 	}
 
 	.logo-redcrossconnect {
-		background-size: contain;
 		width:71.125%;
 		max-width:71.125%;
 		height:30px;
 		min-width:200px;
 		min-height: 30px;
-		background-position: left;
 		margin-left: 0px;
 		margin-right: 0px;
+		img {
+			max-width:100px;
+		}
 	}
 
 	.logo-sgredcross {
-		background-size: contain;
 		width:9.375%;
 		max-width:30px;
 		height:30px;
@@ -1074,13 +1078,17 @@ a {
 			left:0px;
 			li {
 				width:100%;
-				height: 30px;
-				padding-top: 10px;
-				padding-bottom: 10px;
+				height: 50px;
 				clear:both;
 				background: #ffffff;
 				background-position: bottom;
 				border-bottom:1px solid #cccccc;
+
+				a {
+					height:30px;
+					padding-top: 10px;
+					padding-bottom: 10px;
+				}
 			}
 		}
 	}
