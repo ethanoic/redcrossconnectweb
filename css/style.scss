@@ -2,40 +2,40 @@
 
 @font-face {
 	font-family: 'ITCAvantGardeStd-Bk';
-	src: url('../fonts/ITCAvantGardeStd-Bk.eot');
-	src: local('☺'), url('../fonts/ITCAvantGardeStd-Bk.woff') format('woff'), 
+	src: url('../fonts/ITCAvantGardeStd-Bk.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ITCAvantGardeStd-Bk.woff') format('woff'), 
 		url('../fonts/ITCAvantGardeStd-Bk.ttf') format('truetype'), 
 		url('../fonts/ITCAvantGardeStd-Bk.svg') format('svg');
 }
 
 @font-face {
 	font-family: 'ITCAvantGardeStd-Md';
-	src: url('../fonts/ITCAvantGardeStd-Md.eot');
-	src: local('☺'), url('../fonts/ITCAvantGardeStd-Md.woff') format('woff'), 
+	src: url('../fonts/ITCAvantGardeStd-Md.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/ITCAvantGardeStd-Md.woff') format('woff'), 
 		url('../fonts/ITCAvantGardeStd-Md.ttf') format('truetype'), 
 		url('../fonts/ITCAvantGardeStd-Md.svg') format('svg');
 }
 
 @font-face {
 	font-family: 'ITCAvantGardeStd-Demi';
-	src: url('../fonts/ITCAvantGardeStd-Demi.eot');
-	src: local('☺'), url('../fonts/ITCAvantGardeStd-Demi.woff') format('woff'), 
+	src: url('../fonts/ITCAvantGardeStd-Demi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ITCAvantGardeStd-Demi.woff') format('woff'), 
 		url('../fonts/ITCAvantGardeStd-Demi.ttf') format('truetype'), 
 		url('../fonts/ITCAvantGardeStd-Demi.svg') format('svg');
 }
 
 @font-face {
 	font-family: 'ITCAvantGardeStd-XLt';
-	src: url('../fonts/ITCAvantGardeStd-XLt.eot');
-	src: local('☺'), url('../fonts/ITCAvantGardeStd-XLt.woff') format('woff'), 
+	src: url('../fonts/ITCAvantGardeStd-XLt.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ITCAvantGardeStd-XLt.woff') format('woff'), 
 		url('../fonts/ITCAvantGardeStd-XLt.ttf') format('truetype'), 
 		url('../fonts/ITCAvantGardeStd-XLt.svg') format('svg');
 }
 
 @font-face {
 	font-family: 'ITCAvantGardeStd-Bold';
-	src: url('../fonts/ITCAvantGardeStd-Bold.eot');
-	src: local('☺'), url('../fonts/ITCAvantGardeStd-Bold.woff') format('woff'), 
+	src: url('../fonts/ITCAvantGardeStd-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ITCAvantGardeStd-Bold.woff') format('woff'), 
 		url('../fonts/ITCAvantGardeStd-Bold.ttf') format('truetype'), 
 		url('../fonts/ITCAvantGardeStd-Bold.svg') format('svg');
 }
@@ -78,6 +78,7 @@ a {
 	max-height:55px;
 	min-height: 75px;
 	margin-left:19px;
+	margin-right: 30px;
 	display: inline-block;
 	float:left;
 	margin-top: 7px;
