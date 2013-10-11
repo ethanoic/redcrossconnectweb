@@ -206,6 +206,38 @@ a {
   width: 100%;
   height: 100%; }
 
+.reflect {
+  height: 80px;
+  overflow: hidden; }
+  .reflect .mask {
+    position: absolute;
+    z-index: 13;
+    width: 100%;
+    height: 80px;
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 90%, white 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(90%, white), color-stop(100%, white));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 90%, white 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 90%, white 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 90%, white 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 90%, white 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+    /* IE6-8 */ }
+  .reflect img {
+    opacity: 0.4;
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+    filter: url(filter.svg#blur);
+    -webkit-filter: blur(1px); }
+
 .how-app {
   width: 100%;
   display: inline-block; }
@@ -224,11 +256,17 @@ a {
     margin-left: 12%;
     margin-right: 5%;
     max-width: 339px;
-    max-height: 629px;
-    width: 28.25%; }
+    max-height: 730px;
+    width: 28.25%;
+    overflow: hidden; }
     .how-app .app-screen img {
       width: 100%;
       max-width: 299px; }
+    .how-app .app-screen .reflect .mask {
+      width: 100%;
+      max-width: 339px; }
+    .how-app .app-screen .reflect img {
+      width: 100%; }
   .how-app .title-text {
     width: 48.00%;
     float: right; }
@@ -257,12 +295,19 @@ a {
       float: left;
       display: block;
       margin-right: 10px; }
-  .how-app .video-link {
+  .how-app .watch-video {
     width: 48.00%;
     float: left;
     margin-top: 29px;
     margin-left: 16px;
     display: inline-block; }
+    .how-app .watch-video .video-link {
+      display: inline-block; }
+    .how-app .watch-video .reflect .mask {
+      width: 100%;
+      max-width: 135px; }
+    .how-app .watch-video .reflect img {
+      width: 100%; }
   .how-app .app-features {
     margin-left: 67px;
     float: left;
@@ -290,7 +335,7 @@ a {
         float: left;
         width: 25%;
         max-width: 245px;
-        min-width: 130px;
+        min-width: 115px;
         margin-bottom: 5px;
         font-family: 'ITCAvantGardeStd-Demi';
         font-size: 0.875em;
@@ -303,7 +348,7 @@ a {
           margin-left: auto;
           margin-bottom: 2px;
           max-width: 245px;
-          min-width: 150px;
+          min-width: 100px;
           width: 100%; }
       .how-app .app-features ul li.vline {
         border-right: 1px solid #efefef; }
@@ -503,12 +548,26 @@ a {
       margin-top: 20px;
       display: block; }
     .where .left-col .btn-appt {
-      background-image: url(../img/btn_bookappt.png);
+      color: #ffffff;
+      background-color: #B51419;
+      font-family: 'ITCAvantGardeStd-Bk';
+      font-size: 0.85em;
+      line-height: 1.8em;
+      font-weight: normal;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      /* background-image:url(../img/btn_bookappt.png); */
       background-repeat: no-repeat;
       width: 150px;
       height: 21px;
       display: block;
-      margin-top: 20px; }
+      margin-top: 20px;
+      behavior: url(border-radius.htc);
+      -moz-border-radius: 25px;
+      -webkit-border-radius: 25px;
+      -khtml-border-radius: 25px;
+      border-radius: 25px; }
   .where .right-col {
     display: inline-block;
     width: 850px;
@@ -920,6 +979,11 @@ body.modal-show {
     width: 93.75%;
     padding-bottom: 10px; }
 
+  .reflect {
+    height: 50px; }
+    .reflect .mask {
+      height: 50px; }
+
   .how-app .cta-share {
     display: none; }
   .how-app .title-text {
@@ -931,6 +995,8 @@ body.modal-show {
       width: 100%;
       font-size: 2.5em;
       text-align: center; }
+      .how-app .title-text h1 br {
+        display: inline; }
     .how-app .title-text p {
       display: block;
       float: left;
@@ -943,6 +1009,11 @@ body.modal-show {
     float: left;
     margin-top: 10px;
     padding-left: 10%; }
+    .how-app .app-screen .reflect .mask {
+      width: 100%;
+      max-width: 35%; }
+    .how-app .app-screen .reflect img {
+      width: 100%; }
   .how-app .app-links {
     margin: 0px;
     display: block;
@@ -958,7 +1029,7 @@ body.modal-show {
       margin: 0px;
       display: block;
       margin-bottom: 10px; }
-  .how-app .video-link {
+  .how-app .watch-video {
     margin: 0px;
     display: block;
     margin-left: auto;
@@ -966,7 +1037,12 @@ body.modal-show {
     width: 45%;
     float: right;
     text-align: center; }
-    .how-app .video-link img {
+    .how-app .watch-video .video-link img {
+      width: 100%; }
+    .how-app .watch-video .reflect .mask {
+      width: 100%;
+      max-width: 45%; }
+    .how-app .watch-video .reflect img {
       width: 100%; }
   .how-app .app-features {
     margin-left: 0px;
@@ -978,7 +1054,7 @@ body.modal-show {
     .how-app .app-features ul li {
       font-family: 'ITCAvantGardeStd-Bk';
       font-size: 0.8em;
-      width: 40%;
+      width: 35%;
       padding-left: 4%;
       padding-right: 4%;
       margin-bottom: 10px; }

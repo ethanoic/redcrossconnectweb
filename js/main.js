@@ -64,142 +64,6 @@ $(document).ready(function() {
 	  jQuery.browser = browser;
 	};
 
-	// google map initialization
-	var directionsDisplay;
-	var directionsService = new google.maps.DirectionsService();
-	var map;
-	var click = 0;
-	var start;
-	var end;
-	var markers = new Array();
-	var infoWindow;
-	var current_marker;
-
-	var sgcenter = new google.maps.LatLng(1.378308,103.807899);
-	
-	var locations = [
-		{ lat : 1.2809352, lng : 103.8375668 },
-		{ lat : 1.4359454, lng : 103.7861284 },
-		{ lat : 1.3001956, lng : 103.8477121 }
-	];
-
-	var mapProp = {
-		center:sgcenter,
-		zoom:11,
-		panControl:true,
-		zoomControl:true,
-		mapTypeControl:true,
-		scaleControl:true,
-		overviewMapControl:true,
-		mapTypeId:google.maps.MapTypeId.ROADMAP
-	};
-
-	var contentInfo1 =
-	'<div class="info-content">'+
-	'<div class="pull-left">'+
-	'<img src="img/logo-sgredcross.png">'+
-	'</div>'+
-	'<div class="infowindow pull-right">'+
-	'<p><b>Bloodbank@HSA</b><br/>'+
-	'<br>Blood Services Group'+
-	'<br>Health Sciences Authority (opposite Outram Park MRT Station)'+
-	'<br>11 Outram Road'+
-	'<br>Singapore 169078'+
-	'</p>'+
-	'</div>'+
-	'</div>';
-
-	var contentInfo2 =
-	'<div class="info-content">'+
-	'<div class="pull-left">'+
-	'<img src="img/logo-sgredcross.png">'+
-	'</div>'+
-	'<div class="infowindow pull-right">'+
-	'<p><b>Bloodbank@Woodlands</b><br/>'+
-	'<br>900 South Woodlands Drive'+
-	'<br>#05-07 Woodlands Civic Centre (opposite Causeway Point)'+
-	'<br>Singapore 730900'+
-	'</p>'+
-	'</div>'+
-	'</div>';
-
-	var contentInfo3 =
-	'<div class="info-content">'+
-	'<div class="pull-left">'+
-	'<img src="img/logo-sgredcross.png">'+
-	'</div>'+
-	'<div class="infowindow pull-right">'+
-	'<p><b>Bloodbank@Dhoby Ghaut</b><br/>'+
-	'<br>Dhoby Xchange'+
-	'<br>11 Orchard Road'+
-	'<br>#B1-05 to 09'+
-	'<br>Singapore 238826'+
-	'</p>'+
-	'</div>'+
-	'</div>';
-
-	var setMarker = function (bank, map, contentInfo){
-	  var marker = new google.maps.Marker({
-	    position:bank,
-	    icon:'img/red-cross.png'
-	  });
-
-	  marker.setMap(map);
-	  markers.push(marker);
-
-	  marker.infowindow = new google.maps.InfoWindow({
-	    content: contentInfo,
-	    maxWidth: 256
-	  });
-
-	  google.maps.event.addListener(marker, 'click', function() {
-	    if (current_marker) {
-	      current_marker.infowindow.close();
-	    }
-	    current_marker = marker;
-	    marker.infowindow.open(map,marker);
-	  });
-	}
-
-	var initialize = function ()
-	{
-	  directionsDisplay = new google.maps.DirectionsRenderer();
-
-	  //var elementmap = $('.for-mobile:visible').size() != 0 ? document.getElementById("mobilemap") : document.getElementById("desktopmap");
-
-	  map = new google.maps.Map(document.getElementById("mobilemap") ,mapProp);
-	  directionsDisplay.setMap(map);
-
-	  setMarker(new google.maps.LatLng(locations[0].lat, locations[0].lng), map, contentInfo1);
-	  setMarker(new google.maps.LatLng(locations[1].lat, locations[1].lng), map, contentInfo2);
-	  setMarker(new google.maps.LatLng(locations[2].lat, locations[2].lng), map, contentInfo3);
-
-	  map = new google.maps.Map(document.getElementById("desktopmap") ,mapProp);
-	  directionsDisplay.setMap(map);
-
-	  setMarker(new google.maps.LatLng(locations[0].lat, locations[0].lng), map, contentInfo1);
-	  setMarker(new google.maps.LatLng(locations[1].lat, locations[1].lng), map, contentInfo2);
-	  setMarker(new google.maps.LatLng(locations[2].lat, locations[2].lng), map, contentInfo3);
-	}
-
-	google.maps.event.addDomListener(window, 'load', initialize);
-
-	var zoomtoplace = function () 
-	{
-		if (current_marker) {
-	      current_marker.infowindow.close();
-	    }
-		var i = parseInt($('#bloodbanklist').val());
-		var selected_location = new google.maps.LatLng(locations[i].lat, locations[i].lng)
-		map.setCenter(selected_location);
-		current_marker = markers[i];
-  		markers[i].infowindow.open(map, markers[i]);
-
-	};
-
-	$('#bloodbanklist').on('change', function() {
-		zoomtoplace();
-	});
 
 	// methods for contact us form
 	// captcha generation
@@ -396,7 +260,10 @@ $(document).ready(function() {
 	$( window ).resize(function() {
 		// 768px breakpoint
 		if ($(window).width() >= 768) {
+
 			$('.top-nav ul').show();
+		} else {
+			$('.top-nav ul').hide();
 		}
 	});
 
@@ -409,7 +276,10 @@ $(document).ready(function() {
 			max: section_position.top + $(this).height(),
 			onEnter : function(element, position) {
 				var anchor = $(section).find('a').attr('name');
-				//console.log(anchor);
+				if (anchor == undefined) {
+					anchor = $(section).prev().find('a').attr('name');
+				}
+				console.log(anchor);
 
 				$('.sticky-nav .active').removeClass('active');
 				$('.sticky-nav a[href="#' + anchor + '"]').addClass('active');
@@ -422,5 +292,50 @@ $(document).ready(function() {
 			}
 		});
 	})
+
+	$('.top-nav li a').on('click', function(e) {
+		$('.top-nav li.active').removeClass('active');
+
+		if ($(this).attr('href')!='faqs.html' && !$(this).hasClass('contact-us')) {
+
+			
+			$(this).parent().addClass('active');
+
+			$('html, body').animate({
+		        scrollTop: $('a[name="' + $(this).attr('href').replace('#', '') + '"]').offset().top - 50
+		    }, {
+		    	duration: 500,
+		    	specialEasing: 'easeInOutQuint'
+		    });
+
+		    e.preventDefault();
+		}
+		// scroll to the sections
+	});
+
+	$('.faq-category li a').on('click', function(e) {
+		
+		$('html, body').animate({
+	        scrollTop: $('a[name="' + $(this).attr('href').replace('#', '') + '"]').offset().top - 50
+	    }, {
+	    	duration: 500,
+	    	specialEasing: 'easeInOutQuint'
+	    });
+
+	    e.preventDefault();
+		// scroll to the sections
+	});
+
+	$('.back-to-top').on('click', function(e) {
+		$('html, body').animate({
+	        scrollTop: 0
+	    }, {
+	    	duration: 500,
+	    	specialEasing: 'easeInOutQuint'
+	    });
+
+	    e.preventDefault();
+		// scroll to the sections
+	});
 
 });
