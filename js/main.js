@@ -214,6 +214,7 @@ $(document).ready(function() {
 	};
 
 	$('.modal .close').on('click', function() {
+		$('body').removeClass('modal-show');
 		$('.modal').hide();
 	});
 
@@ -221,7 +222,7 @@ $(document).ready(function() {
 		//var contact_content = $('#contact-content').html();
 
 		$('.contact-us').on('click', function() {
-			
+			$('body').addClass('modal-show');
 			$( '.form1' ).parsley();
 			captcha = generate(5).toUpperCase();
 			$('.modal').show();
@@ -421,17 +422,5 @@ $(document).ready(function() {
 			}
 		});
 	})
-
-	/*
-	$('.sticky-nav').scrollspy({
-        min: $('#nav').offset().top,
-        onEnter: function(element, position) {
-            $("#nav").addClass('fixed');
-        },
-        onLeave: function(element, position) {
-            $("#nav").removeClass('fixed');
-        }
-    });
-	*/
 
 });
