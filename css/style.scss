@@ -284,6 +284,9 @@ a {
 
 
 .reflect {
+	/* IE 5-7 */
+	  	filter: alpha(opacity=40);
+	margin-top:1px;
 	height:80px;
 	overflow: hidden;
 
@@ -306,7 +309,22 @@ a {
 	}
 
 	img {
+		zoom: 1;
+
 		opacity:0.4;
+
+		/* IE 8 */
+	  	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+
+	  	/* IE 5-7 */
+	  	filter: alpha(opacity=40);
+
+	  	/* Netscape */
+	  	-moz-opacity: 0.4;
+
+	  	/* Safari 1.x */
+	  	-khtml-opacity: 0.4;
+
 
 		-moz-transform: scaleY(-1);
 		-webkit-transform: scaleY(-1);
@@ -347,6 +365,9 @@ a {
 		}
 
 		.reflect {
+			width:100%;
+			max-width:339px;
+
 			.mask {
 				width:100%;
 				max-width:339px;
@@ -397,23 +418,26 @@ a {
 		}
 	}
 	.watch-video {
-		width:48.00%;
+		width:48%;
 		float: left;
 		margin-top:29px;
 		margin-left: 16px;
 		display: inline-block;
 
 		.video-link {
+			width:100%;
 			display: inline-block;
 		}	
 
 		.reflect {
+			width:48%;
+
 			.mask {
 				width:100%;
-				max-width:135px;
+				max-width: 246px;
 			}
 			img {
-				width:100%;
+				width:none;
 			}
 		}
 	}
@@ -1350,31 +1374,44 @@ body.modal-show {
 				margin-bottom: 10px;
 			}
 		}
-		.watch-video {
+		.watch-video-col {
 			margin: 0px;
 			display: block;
-			margin-left:auto;
-			margin-right:auto;
-			width:45%;
-			float:right;
+			margin-top: 0px;
+			padding-bottom: 10px;
+			padding-top: 35px;
+			width: 45%;
+			float: right;
 			text-align: center;
 
-			.video-link {
-				img {
-					width:100%;
-				}
-			}
-			
-			.reflect {
-				.mask {
-					width:100%;
-					max-width:45%;
-				}
-				img {
-					width:100%;
-				}
-			}
+			.watch-video {
+				float:none;
+				margin: 0px;
+				display: block;
+				margin-left:auto;
+				margin-right:auto;
+				width:135px;
+				text-align: center;
 
+				.video-link {
+					img {
+						width:135px;
+					}
+				}
+				
+				.reflect {
+					max-width:135px;
+					width:135px;
+
+					.mask {
+						width:135px;
+					}
+					img {
+						width:135px;
+					}
+				}
+
+			}
 		}
 
 		.app-features {
@@ -1388,11 +1425,17 @@ body.modal-show {
 			}
 
 			ul {
-					
+				display: block;
+				max-width:600px;
+				margin-left: auto;
+				margin-right: auto;
+				width:100%;
+
 				li {
+					display: block;
 					font-family: 'ITCAvantGardeStd-Bk';
 					font-size:0.8em;
-					width:35%;
+					width:41%;
 					padding-left: 4%;
 					padding-right: 4%;
 					margin-bottom: 10px;
