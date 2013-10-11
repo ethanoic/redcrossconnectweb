@@ -203,20 +203,91 @@ $(document).ready(function() {
 
 	// methods for contact us form
 	// captcha generation
-	charset = "abcdefghijklmnopqrstuvwxyz0123456789";
+	
 	var generate = function(len) {
+		var charset = "abcdefghijklmnopqrstuvwxyz0123456789";
 		var output = '';
 		for(var i=0; i<len; i++) {
-		   output += charset[ Math.floor(Math.random()*charset.length) ];
+		   	output = output + '' + charset.charAt( Math.floor(Math.random()*charset.length) );
 		}
 	    return output;
 	};
 
-	captcha = generate(5).toUpperCase();
-	$('.captcha').html(captcha);
+	$('.modal .close').on('click', function() {
+		$('.modal').hide();
+	});
 
-	$('.contactus').load( "contact.html?rn=" + Math.random()*100, function() {
-		var contact_content = $('#contact-content').html();
+	$('.contactus .content').load( "contact.html?rn=" + Math.random()*100, function() {
+		//var contact_content = $('#contact-content').html();
+
+		$('.contact-us').on('click', function() {
+			
+			$( '.form1' ).parsley();
+			captcha = generate(5).toUpperCase();
+			$('.modal').show();
+		});
+
+		captcha = generate(5).toUpperCase();
+
+		$('.captcha').html(captcha);
+
+		$( '.form1' ).parsley();
+
+		$('.btn-reload').bind('click', function() {
+			captcha = generate(5).toUpperCase();
+			$('.captcha').html(captcha);
+		});
+
+		$("#contact-verify").focusout(function(){
+			var verify_code = $("#contact-verify").val();
+			if (verify_code.toUpperCase() == captcha ) {
+				$('#verify_fail').hide();
+				$('#contact-verify').removeClass('parsley-error').addClass('parsley-success');
+			} else {
+			  	$('#verify_fail').show();
+			  	$('#contact-verify').addClass('parsley-error').removeClass('parsley-success');
+			}
+		});
+
+		$('.btn-image').bind('click', function() {
+			
+			console.log('test');
+
+			$( '.form1' ).parsley( 'validate' );
+			var verify_code = $("#contact-verify").val();
+			
+			if (verify_code.toUpperCase() == captcha ) {
+			  var name = $("#contact-name").val();
+			  var email = $("#contact-email").val();
+			  var phone = $("#contact-phone").val();
+			  var subject = $("#contact-subject").val();
+			  var message= $("#contact-message").val();
+			  var dataString = 'name=' + name + '&email=' + email + '&phone=' + phone + '&subject=' + subject + '&message=' + message;
+
+			  if ($( '.form1' ).parsley( 'validate' )) {
+			    $.ajax({
+			      type: "POST",
+			      url: "app/app.php",
+			      data: dataString,
+			      success: function(data){
+			      	console.log(data);
+			      	if (data == 'result=0') {
+			      		$('.success').fadeIn(1000);
+			      		$( '.form1 input' ).val('');
+			      		$( '.form1 textarea' ).val('');
+			      	} else
+			      	{
+
+			      	}
+			      }
+			    });
+			  }
+			}
+			return false;
+		});
+
+
+		/*
 		$('.contactus').html('');
 
 		$(".contact-us").fancybox({
@@ -226,71 +297,10 @@ $(document).ready(function() {
 			'type' : 'html',
 			afterShow: function(current, previous) {
 
-				$('.contact-form *').show();
-
-				//console.log('form open');
-				captcha = generate(5).toUpperCase();
-
-				$('.captcha').html(captcha);
-
-				// Contact Form
-				$( '.form1' ).parsley();
-
-				$('.btn-reload').bind('click', function() {
-					captcha = generate(5).toUpperCase();
-					$('.captcha').html(captcha);
-				});
-
-				$("#contact-verify").focusout(function(){
-					var verify_code = $("#contact-verify").val();
-					if (verify_code.toUpperCase() == captcha ) {
-						$('#verify_fail').hide();
-						$('#contact-verify').removeClass('parsley-error').addClass('parsley-success');
-					} else {
-					  	$('#verify_fail').show();
-					  	$('#contact-verify').addClass('parsley-error').removeClass('parsley-success');
-					}
-				});
-
-				$('.btn-image').bind('click', function(){
-					
-					console.log('test');
-
-					$( '.form1' ).parsley( 'validate' );
-					var verify_code = $("#contact-verify").val();
-					
-					if (verify_code.toUpperCase() == captcha ) {
-					  var name = $("#contact-name").val();
-					  var email = $("#contact-email").val();
-					  var phone = $("#contact-phone").val();
-					  var subject = $("#contact-subject").val();
-					  var message= $("#contact-message").val();
-					  var dataString = 'name=' + name + '&email=' + email + '&phone=' + phone + '&subject=' + subject + '&message=' + message;
-
-					  if ($( '.form1' ).parsley( 'validate' )) {
-					    $.ajax({
-					      type: "POST",
-					      url: "app/app.php",
-					      data: dataString,
-					      success: function(data){
-					      	console.log(data);
-					      	if (data == 'result=0') {
-					      		$('.success').fadeIn(1000);
-					      		$( '.form1 input' ).val('');
-					      		$( '.form1 textarea' ).val('');
-					      	} else
-					      	{
-
-					      	}
-					      }
-					    });
-					    //$.fancybox.close();
-					  }
-					}
-					return false;
-				});
+				
 			}
 		});
+		*/
 	});
 
 	// where to donate - view all donation schdules
