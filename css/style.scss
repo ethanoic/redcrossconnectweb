@@ -360,8 +360,11 @@ a {
 		overflow: hidden;
 
 		img {
-			width:100%;
+			display: block;
+			width:auto;
+			height:auto;
 			max-width:299px;
+			max-height: 629px;
 		}
 
 		.reflect {
@@ -1344,6 +1347,10 @@ body.modal-show {
 			float:left;
 			margin-top: 10px;
 			padding-left: 10%;
+
+			img {
+				width:100%;
+			}
 
 			.reflect {
 				.mask {

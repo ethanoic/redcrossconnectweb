@@ -272,8 +272,11 @@ a {
     width: 28.25%;
     overflow: hidden; }
     .how-app .app-screen img {
-      width: 100%;
-      max-width: 299px; }
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 299px;
+      max-height: 629px; }
     .how-app .app-screen .reflect {
       width: 100%;
       max-width: 339px; }
@@ -1027,6 +1030,8 @@ body.modal-show {
     float: left;
     margin-top: 10px;
     padding-left: 10%; }
+    .how-app .app-screen img {
+      width: 100%; }
     .how-app .app-screen .reflect .mask {
       width: 100%;
       max-width: 35%; }
