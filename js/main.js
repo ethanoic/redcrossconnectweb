@@ -399,4 +399,39 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.section').each(function() {
+		var section = $(this);
+		var section_position = $(this).position();
+
+		$(this).scrollspy({
+			min: section_position.top,
+			max: section_position.top + $(this).height(),
+			onEnter : function(element, position) {
+				var anchor = $(section).find('a').attr('name');
+				//console.log(anchor);
+
+				$('.sticky-nav .active').removeClass('active');
+				$('.sticky-nav a[href="#' + anchor + '"]').addClass('active');
+
+				$('.top-nav .active').removeClass('active');
+				$('.top-nav a[href="#' + anchor + '"]').parent().addClass('active');
+			},
+			onLeave : function(element, position) {
+
+			}
+		});
+	})
+
+	/*
+	$('.sticky-nav').scrollspy({
+        min: $('#nav').offset().top,
+        onEnter: function(element, position) {
+            $("#nav").addClass('fixed');
+        },
+        onLeave: function(element, position) {
+            $("#nav").removeClass('fixed');
+        }
+    });
+	*/
+
 });
