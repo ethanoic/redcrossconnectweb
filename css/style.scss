@@ -51,13 +51,43 @@ body {
 	margin: 0px;
 
 	.page-container {
+		width:100%;
+	}
+	.inner-section {
 		max-width:1200px;
 		min-width:1200px;
 		width:100%;
 		margin-left:auto;
 		margin-right:auto;
+		.inner-block {
+			width:100%;
+			clear:both;
+		}
+	}
+
+}
+
+.modal-show {
+	padding: 0px;
+	height: 650px;
+	overflow: hidden;
+	iframe,
+	canvas {
+		display: none;
 	}
 }
+
+.close {
+	background-image:url(../fancybox/fancybox_sprite.png);
+	background-repeat: no-repeat;
+	width:36px;
+	height:36px;
+	float:right;
+	position: relative;
+	margin-top: 8px;
+	margin-right: 8px;
+}
+
 a {
 	color:#b51419;
 }
@@ -103,14 +133,16 @@ a {
 
 
 .top-nav {
-	background-image: url(../img/top_nav_bg.jpg);
+	background-image: url(../img/top_nav_bg.png);
 	background-repeat: repeat-x;
+	
+
 	width:100%;
 	height:75px;
 	position: fixed;
 	left:0px;
 	top:0px;
-	z-index: 1001;
+	z-index: 1000;
 
 	ul {
 		margin:0px;
@@ -264,7 +296,7 @@ a {
 .section {
 	padding-top: 35px;
 	padding-bottom: 35px;
-
+	
 	p {
 		font-family: 'ITCAvantGardeStd-Bk';
 		font-size: 100%;
@@ -505,11 +537,14 @@ a {
 
 .release-hero {
 	background-color: #ebe9e3;
-	background-image: url(../img/release-the-hero-image.png);
-	background-repeat: no-repeat;
-	background-position: 0px 230px;
-	padding-right: 48px;
-	height:615px;
+
+	.inner-section {
+		background-image: url(../img/release-the-hero-image.png);
+		background-repeat: no-repeat;
+		background-position: 0px 230px;
+		padding-right: 48px;
+		height:615px;
+	}
 
 	h1 {
 		padding: 0px;
@@ -565,7 +600,8 @@ a {
 }
 
 .bloodstats {
-	display: inline-block;
+	display: block;
+	min-height: 150px;
 	padding-left: 48px;
 	padding-right: 28px;
 
@@ -711,10 +747,33 @@ a {
 		}
 	}
 
+	.btn-appt {
+		color:#ffffff;
+		font-family: 'ITCAvantGardeStd-Bk';
+		font-size: 0.85em;
+		line-height: 1.8em;
+		font-weight: normal;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+
+		background-image:url(../img/btn_small_bg.png);
+		background-repeat: no-repeat;
+		width:150px;
+		height:21px;
+		display: block;
+		margin-top: 20px;
+	}
+
 	.left-col {
 		display: inline-block;
 		width:249px;
 		float:left;
+
+		.btn-appt {
+			display: block;
+		}
+
 		p {
 			font-size: 100%;
 			line-height: 150%;
@@ -756,31 +815,6 @@ a {
 			margin-top: 20px;
 			display: block;
 		}
-
-		.btn-appt {
-			color:#ffffff;
-			background-color: #B51419;
-			font-family: 'ITCAvantGardeStd-Bk';
-			font-size: 0.85em;
-			line-height: 1.8em;
-			font-weight: normal;
-			text-transform: uppercase;
-			text-decoration: none;
-			text-align: center;
-
-			/* background-image:url(../img/btn_bookappt.png); */
-			background-repeat: no-repeat;
-			width:150px;
-			height:21px;
-			display: block;
-			margin-top: 20px;
-
-			behavior: url(border-radius.htc);
-			-moz-border-radius: 25px;
-		    -webkit-border-radius: 25px;
-		    -khtml-border-radius: 25px;
-		    border-radius: 25px;
-		}
 	}
 
 	.right-col {
@@ -789,9 +823,20 @@ a {
 		float:left;
 		margin-left: 20px;
 
+		.btn-appt {
+			display: none;
+		}
+
 		.googlemap {
 			width:100%;
 			height:400px;
+
+			iframe,
+			object,
+			embed {
+				width:100%;
+				height:100%;
+			}
 		}
 		
 	}
@@ -803,15 +848,10 @@ a {
 	padding-bottom: 0px;
 	margin-top: 0px;
 
-	.fb-like-box {
-		float:left;
-		margin-top: 0px;
-	}
-
-	.fb-facepile {
-		display: none;
-		float:left;
-		margin-top: 0px;	
+	iframe {
+		display: block;
+		width:100%;
+		min-height: 200px;
 	}
 
 	.footer-image {
@@ -824,18 +864,14 @@ a {
 	}
 }
 
-body.modal-show {
-	height:1000px;
-}
-
 .modal {
 	display: none;
-	position: absolute;
+	position: fixed;
 	z-index: 1004;
 	top:0px;
 	left:0px;
 	width:100%;
-	height:4000px;
+	height:100%;
 
 	.modal-container {
 		opacity:1;
@@ -844,12 +880,12 @@ body.modal-show {
 		top:0px;
 		left:0px;
 		width:100%;
-		height:100%;
+		height:90%;
 
 		.modal-box {
 			max-width:640px;
 			width:80%;
-			height: 600px;
+			height: 90%;
 			margin-left: auto;
 			margin-right: auto;
 			margin-top: 100px;
@@ -869,8 +905,12 @@ body.modal-show {
 
 			.content {
 				width:100%;
-				height: 600px;
-				overflow: auto;
+				height: 95%;
+				overflow-y:scroll;
+
+				.close {
+					display: none;
+				}
 			}
 			.content>div {
 				margin-left:auto;
@@ -880,12 +920,12 @@ body.modal-show {
 		}
 	}
 	.modal-overlay {
-		position: absolute;
+		position: fixed;
 		z-index: 1003;
 		top:0px;
 		left:0px;
 		width:100%;
-		height:inherit;
+		height:100%;
 		background-color: #000000;
 		
 		/* IE 8 */
@@ -905,12 +945,32 @@ body.modal-show {
 	}
 }
 
-.contactus {
+.contact {
+	.modal {
+		display: block;
+		top: 0px;
+		z-index: 1000;
+		position: none;
+		height:100%;
+
+		.modal-container {
+			
+
+
+			.modal-box {
+				.close {
+				}
+			}
+		}
+
+		.modal-overlay {
+			position: fixed;
+			height: 100%;
+		}
+	}
 }
 
 .contact-form {
-	height: auto;
-	position: relative;
 	width:100%;
 }
 .contact-form .contact-header {
@@ -919,6 +979,16 @@ body.modal-show {
 	width:100%;
 	display: inline-block;
 	background: #9c1824 url("../img/contact-header-bg.png");
+
+	.close {
+		background-image:url(../fancybox/fancybox_sprite.png);
+		background-repeat: no-repeat;
+		width:36px;
+		height:36px;
+		float:right;
+		margin-top:8px;
+		margin-right:8px;
+	}
 }
 .contact-form .contact-header span {
 	font-weight: 100;
@@ -961,7 +1031,7 @@ body.modal-show {
 .form1 input {
 	width: 300px;
 	height: 30px;
-	font-family: AvantGarde;
+	font-family: 'ITCAvantGardeStd-Bk';
 	font-weight: normal;
 	font-style: normal;
 	margin: 0;
@@ -996,7 +1066,7 @@ body.modal-show {
 	max-width: 320px;
 	width:80%;
 	height: 80px;
-	font-family: AvantGarde;
+	font-family: 'ITCAvantGardeStd-Bk';
 	font-weight: normal;
 	font-style: normal;
 }
@@ -1125,17 +1195,12 @@ body.modal-show {
 	clear: both;
 }
 
-
 /* Smart Phone */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
 }
 
-/* Landscape */
-@media only screen and (min-width : 321px) {
-}
-
-/* Portrait */
+/* responsive break points */
 @media only screen and (max-width : 768px) {
 
 	body {
@@ -1144,13 +1209,23 @@ body.modal-show {
 			min-width:320px;
 			width:100%;
 		}
+
+		.inner-section {
+			width:100%;
+			min-width:100%;
+			max-width: 100%;
+			margin-left:auto;
+			margin-right:auto;
+
+			.inner-block {
+				width:100%;
+				clear:both;
+			}
+		}
 	}
 
-	.for-mobile {
-		display: block;
-	}
-	.for-desktop {
-		display: none;
+	body.no-pad {
+		padding: 0px;
 	}
 
 	br {
@@ -1257,11 +1332,12 @@ body.modal-show {
 
 	.top-nav {
 		position: fixed;
-		z-index: 1000;
+		z-index: 9999;
 		top:0px;
 		left:0px;
 		height:45px;
 		background-position: 0px -25px;
+
 
 		.menu {
 			background-image: url(../img/btn-menu.png);
@@ -1459,10 +1535,12 @@ body.modal-show {
 
 	.release-hero {
 		display: block;
-		
-		height:505px;
-		background-position: 185% 2px;
-		background-size: 71%;
+
+		.inner-section {
+			background-position: 185% 2px;
+			background-size: 71%;
+			padding-right: 0px;
+		}
 
 		h1 {
 			margin-left:0px;
@@ -1489,17 +1567,20 @@ body.modal-show {
 
 		.right-col {
 			width:100%;
+			float:left;
 
 			.video-player {
+				float:left;
 				width:100%;
-				background-size: contain;
-				height:200px;
+				max-height:300px;
 				margin-top: 0px;
 				background-image:none;
 
-				iframe {
-					width:inherit;
-					height:inherit;
+				iframe,
+				object,
+				embed {
+				    width: 100%;
+				    height: 70%;
 				}
 			}	
 
@@ -1561,7 +1642,7 @@ body.modal-show {
 
 	.where {
 		text-align: center;
-		height: 960px;
+		height: 1000px;
 
 		h1 {
 			font-size:3em;
@@ -1569,6 +1650,13 @@ body.modal-show {
 			line-height: 120%;
 			padding-top: 20px;
 		}
+
+		.btn-appt {
+			display: block;
+			margin-left:auto;
+			margin-right: auto;
+		}
+
 		.left-col {
 			width:100%;
 			display: block;
@@ -1578,10 +1666,9 @@ body.modal-show {
 				margin-left:auto;
 				margin-right: auto;
 			}
+
 			.btn-appt {
-				display: block;
-				margin-left:auto;
-				margin-right: auto;
+				display: none;
 			}
 
 			.googlemap {
@@ -1595,6 +1682,11 @@ body.modal-show {
 			display: block;
 			margin-left: 0px;
 			margin-top: 10px;
+
+			.btn-appt {
+				display: block;
+			}
+
 		}
 	}
 
@@ -1602,15 +1694,8 @@ body.modal-show {
 	.facebook {
 		margin-top:0px;
 		height:auto;
+		padding-bottom: 10px;
 
-		.fb-like-box {
-			margin-top:0px;
-			width:320px;
-			overflow: hidden;
-		}
-		.fb-facepile {
-			margin-top:0px;
-		}
 		.footer-image {
 			display: none;
 		}
@@ -1638,17 +1723,86 @@ body.modal-show {
 	}
 
 	.modal {
+		position: fixed;
+		overflow-y: scroll;
+
+		width:100%;
+		height:100%;
+		height:700px;
+
 		.modal-container {
+			position: static;
+			height:700px;
+
 			.modal-box {
-				margin-top:50px;
+				margin: 0px;
+				max-width: 640px;
+				width:97%;
+				background: #ffffff;
+				padding: 1.5%;
+				height:700px;
+
+				.close {
+					display: none;
+				}
+
+				.content {
+					height: 650px;
+					overflow: visible;
+
+					.close {
+						display: block;
+						margin: 0px;
+						margin-top: 8px;
+						margin-right: 8px;
+					}
+				}
+			}
+		}
+		.modal-overlay {
+			height:650px;
+			display: none;
+		}
+	}
+
+	.contact {
+		.modal {
+			position: fixed;
+			display: block;
+			top: 60px;
+			z-index: 1000;
+
+			.modal-container {
+				.modal-box {
+					.close {
+						display: none;
+					}
+				}
+			}
+
+			.modal-overlay {
+				
 			}
 		}
 	}
 
+	.for-mobile {
+		display: block;
+	}
+	.for-desktop {
+		display: none;
+	}
+
+	
+	div.fancy-select {
+		width:200px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
 }
 
-@media only screen and (min-width : 320px) and (max-width : 640px) {
+@media only screen and (min-width : 320px) and (max-width : 767px) {
 	.logo-redcrossconnect {
-		background-position: center;
 	}
 }

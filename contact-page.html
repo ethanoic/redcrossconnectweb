@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Red Cross Connection</title>
+
+        <meta property="og:title" content="Red Cross Connection"/>
+        <meta property="og:image" content="img/a-pack.png">   
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" href="css/ie7.css">
+        <![endif]-->
+
+        <!--[if IE 8]>
+        <link rel="stylesheet" href="css/ie8.css">
+        <![endif]-->
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body class="no-pad">
+        <div class="page-container" >
+
+            <div class="top-nav">
+                <div class="page-container">
+                    <a href="javascript:void(0);" class="menu"></a>
+                    <a href="index.html" class="logo-redcrossconnect"><img src="img/logo.png"/></a>
+                    <ul>
+                        <li><a href="index.html#how"><span class="icon icon-how"></span> <span>How can you help</span></a></li>
+                        <li><a href="index.html#where"><span class="icon icon-where"></span> <span>Where to donate</span></a></li>
+                        <li><a href="faqs.html"><span class="icon icon-faqs"></span> <span>Donor FAQs</span></a></li>
+                        <li class="active"><a href="#" class="contact-us"><span class="icon icon-contact"></span> <span>Contact us</span></a></li>
+                    </ul>
+                    <a href="//redcross.org.sg" target="_blank" class="logo-sgredcross"><img src="img/logo-sgredcross.png"/></a>
+                </div>
+            </div>
+
+            <div class="section contact">
+                <div class="modal">
+                    <div class="modal-container">
+                        <div class="modal-box contactus">
+                            <a href="#" class="close"></a>
+                            <div class="content">
+
+                                <div class="contact-form" id="content">
+                        
+                                    <div class="contact-header">
+                                      <span>CONTACT US</span>
+                                    </div>
+                                    
+                                    <form class="form1" method="post" data-validate="parsley">
+
+                                      <p class="note">*denotes mandatory field</p>
+                                      <fieldset>
+                                        
+                                        <div class="row">
+                                          <label>* Name</label>
+                                          <input name="name" id="contact-name" type="text" data-trigger="change" data-required="true" />
+                                        </div>
+
+                                        <div class="row">
+                                          <label>* Email</label>
+                                          <input name="email" id="contact-email" type="text" data-trigger="change" data-required="true" data-type="email" />
+                                        </div>
+
+                                        <div class="row">
+                                          <label>Mobile Phone</label>
+                                          <input name="phone" id="contact-phone" type="text" data-rangelength="[8,12]"  data-trigger="change" data-type="number" />
+                                        </div>
+                                        
+                                        <div class="row">
+                                          <label>* Verify</label>
+                                          <input name="verify" id="contact-verify" type="text" /><span class="captcha"></span><span class="btn-reload"><img alt="Reload" src="img/reload.png" /><span>
+                                          <ul id="verify_fail" class="parsley-error-list" style="display: none;">
+                                            <li class="required" style="display: list-item;">Verify failed.</li>
+                                          </ul>
+                                        </div>
+
+                                        <div class="row">
+                                          <label>* Message</label>
+                                          <textarea rows="10" name="message" id="contact-message" data-trigger="change" data-required="true" data-trigger="keyup" data-rangelength="[20,2000]"></textarea>
+                                        </div>
+
+                                      </fieldset>
+                                      <div class="btn-send"><img class="btn-image" src="img/btn-send.png" ></div>
+                                    </form>              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-overlay"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="js/vendor/parsley.min.js"></script>
+        <script type='text/javascript' src='js/vendor/jquery-scrollspy.js'></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-41573034-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

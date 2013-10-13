@@ -1,0 +1,64 @@
+/* IE8 */
+.bloodstats {
+	.right-col {
+
+		ul {
+			li.blood-type-stat {
+
+				h3 {
+				}
+
+				.chart-container {
+
+					.status {
+						margin: 0px;
+						padding: 0px;
+						width:135px;
+						height:100px;
+						vertical-align: middle;
+
+						label {
+							display: block;
+							margin-top:40%;
+							font-weight: bold;
+						}
+					}
+					.chart {
+						margin: 0px;
+						padding: 0px;
+						width:135px;
+						height: 135px;
+						background-repeat: no-repeat;
+						background-position: center center;
+						canvas {
+							display: none;
+						}
+					}
+					.chart.very-low {
+						background-image:url(../img/blood_verylow.jpg);
+					}
+					.chart.low {
+						background-image:url(../img/blood_low.jpg);
+					}
+					.chart.healthy {
+						background-image:url(../img/blood_healthy.jpg);
+					}
+				}
+			}
+		}
+	}
+}
+
+.altgrey {
+	background-color: #ebe9e3;
+}
+
+.where {
+	.left-col {
+		.btn-appt {
+			background-color: none;
+			background-image:url(../img/btn_small_bg.png);
+			background-repeat: no-repeat;
+		}
+	}
+}

@@ -17,12 +17,18 @@
         <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 
         <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" href="css/fancySelect.css">
+
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
 
         <!--[if lte IE 7]>
         <link rel="stylesheet" href="css/ie7.css">
+        <![endif]-->
+
+        <!--[if IE 8]>
+        <link rel="stylesheet" href="css/ie8.css">
         <![endif]-->
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -31,14 +37,14 @@
         <div class="page-container">
 
             <div class="top-nav">
-                <div class="page-container">
+                <div class="inner-section">
                     <a href="javascript:void(0);" class="menu"></a>
                     <a href="index.html" class="logo-redcrossconnect"><img src="img/logo2.png"/></a>
                     <ul>
                         <li class="active"><a href="#how"><span class="icon icon-how"></span> <span>How can you help</span></a></li>
                         <li><a href="#where"><span class="icon icon-where"></span> <span>Where to donate</span></a></li>
                         <li><a href="faqs.html"><span class="icon icon-faqs"></span> <span>Donor FAQs</span></a></li>
-                        <li><a href="javascript:void(0);" class="contact-us"><span class="icon icon-contact"></span> <span>Contact us</span></a></li>
+                        <li><a href="contact-page.html" class="contact-us"><span class="icon icon-contact"></span> <span>Contact us</span></a></li>
                     </ul>
                     <a href="//redcross.org.sg" target="_blank" class="logo-sgredcross"><img src="img/logo-sgredcross.png"/></a>
                 </div>
@@ -54,206 +60,272 @@
             </div>
 
             <div class="section how-app">
-                <a name="how"></a>
-
-                <div class="cta-share site-share">
-                    <span class="st_sharethis_custom"
-                       st_title="Join the Red Cross Connection"    
-                       st_url="http://connect.redcross.sg/"
-                       st_summary="Be part of a network of lifesavers with Red Cross Connection. Share blood alerts to help find donors and save lives."
-                       st_image="img/200x200.jpg"></span>
-                </div>
+                <div class="inner-section">
                 
-                <div class="title-text">
-                    <h1>
-                        <span class="redbold">Connect</span> and<br/>
-                        help save lives
-                    </h1>
+                    <a name="how"></a>
+
+                    <div class="cta-share site-share">
+                        <span class="st_sharethis_custom"
+                           st_title="Join the Red Cross Connection"    
+                           st_url="http://connect.redcross.sg/"
+                           st_summary="Be part of a network of lifesavers with Red Cross Connection. Share blood alerts to help find donors and save lives."
+                           st_image="img/200x200.jpg"></span>
+                    </div>
                     
-                    <p>One blood donation helps save 3 lives. But reaching out to potential donors can save countless more. With Red Cross Connection, you'll receive alerts when blood is needed, and can make a big difference by simply choosing to share.</p>
-                </div>
-
-                <div class="app-screen">
-                    <img src="img/app-screen.png" />
-
-                    <div class="reflect" >
-                        <div class="mask"></div>
-                        <img src="img/app-screen.png" />
+                    <div class="title-text">
+                        <h1>
+                            <span class="redbold">Connect</span> and<br/>
+                            help save lives
+                        </h1>
+                        
+                        <p>One blood donation helps save 3 lives. But reaching out to potential donors can save countless more. With Red Cross Connection, you'll receive alerts when blood is needed, and can make a big difference by simply choosing to share.</p>
                     </div>
 
-                </div>
+                    <div class="app-screen">
+                        <img src="img/app-screen.png" />
 
-                <div class="app-links">
-                    <a href="#"><img src="img/btn_appstore.png" /></a>
-                    <a href="#"><img src="img/btn_googleplay.png" width="119" /></a>
-                </div>
-
-                <div class="watch-video-col">
-                    <div class="watch-video">
-                        <a href="#video" class="video-link"><img src="img/thumb_video.png" /></a>
                         <div class="reflect" >
                             <div class="mask"></div>
-                            <img src="img/thumb_video.png" />
+                            <img src="img/app-screen.png" />
+                        </div>
+
+                    </div>
+
+                    <div class="app-links">
+                        <a href="#"><img src="img/btn_appstore.png" /></a>
+                        <a href="#"><img src="img/btn_googleplay.png" width="119" /></a>
+                    </div>
+
+                    <div class="watch-video-col">
+                        <div class="watch-video">
+                            <a href="#video" class="video-link"><img src="img/thumb_video.png" /></a>
+                            <div class="reflect" >
+                                <div class="mask"></div>
+                                <img src="img/thumb_video.png" />
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="app-features">
-                    <h2>Red cross connection app letS you:</h2>
-                    <ul>
-                        <li class="vline mvline">
-                            <img src="img/app_feature_sharethis.png"/>
-                            Receive and share alerts<br/>
-                            to your social network
-                        </li>
-                        <li class="vline">
-                            <img src="img/app_feature_hero.png"/>
-                            Donate blood and scan <br/>
-                            to release the hero within
-                        </li>
-                        <li class="vline mvline">
-                            <img src="img/app_feature_locator.png"/>
-                            Locate your<br/>
-                            nearest blood bank
-                        </li>
-                        <li>
-                            <img src="img/app_feature_lifesaved.png"/>
-                            Track your donations and<br/>
-                            number of lives saved
-                        </li>
-                    </ul>
+                    <div class="app-features">
+                        <h2>Red cross connection app letS you:</h2>
+                        <ul>
+                            <li class="vline mvline">
+                                <img src="img/app_feature_sharethis.png"/>
+                                Receive and share alerts<br/>
+                                to your social network
+                            </li>
+                            <li class="vline">
+                                <img src="img/app_feature_hero.png"/>
+                                Donate blood and scan <br/>
+                                to release the hero within
+                            </li>
+                            <li class="vline mvline">
+                                <img src="img/app_feature_locator.png"/>
+                                Locate your<br/>
+                                nearest blood bank
+                            </li>
+                            <li>
+                                <img src="img/app_feature_lifesaved.png"/>
+                                Track your donations and<br/>
+                                number of lives saved
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
 
             </div>
 
             <div class="section release-hero">
-                <a name="video"></a>
-                <h1></h1>
-                <div class="right-col">
-                    <div class="video-player">
-                        <!--
-                        width="820" height="415" 
-                        -->
-                        <iframe src="//www.youtube.com/embed/rY4PCajYhVc?rel=0&wmode=opaque&autohide=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
+                <div class="inner-section">
+
+                    <div class="inner-background">
+                        <a name="video"></a>
+                        <h1></h1>
+                        <div class="right-col">
+                            <div class="video-player">
+                                <!--
+                                width="820" height="415" 
+                                -->
+                                <iframe src="//www.youtube.com/embed/rY4PCajYhVc?rel=0&wmode=opaque&autohide=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <h2>
+                                Together, we can<br/>
+                                <span class="redbold">make a difference</span>
+                            </h2>
+                            <div class="btn-share-now video-share">
+                                <span class="st_sharethis_custom"
+                                   st_title="Download the Red Cross Connection"    
+                                   st_url="http://connect.redcross.sg/#video"
+                                   st_summary="We're all connected by blood and you can help it get to where it's needed most with this app. Find out how it works in this short video."
+                                   st_image="http://img.youtube.com/vi/rY4PCajYhVc/0.jpg"></span>
+                            </div>
+                        </div>
                     </div>
-                    <h2>
-                        Together, we can<br/>
-                        <span class="redbold">make a difference</span>
-                    </h2>
-                    <div class="btn-share-now video-share">
-                        <span class="st_sharethis_custom"
-                           st_title="Download the Red Cross Connection"    
-                           st_url="http://connect.redcross.sg/#video"
-                           st_summary="We're all connected by blood and you can help it get to where it's needed most with this app. Find out how it works in this short video."
-                           st_image="http://img.youtube.com/vi/rY4PCajYhVc/0.jpg"></span>
-                    </div>
+
                 </div>
             </div>
 
             <div class="section bloodstats">
-                <div class="left-col">
-                    <h2>If only <span class="redbold">1% more</span> people in 
-                        singapore donated blood, 
-                        shortages would disappear
-                    </h2>
+                <div class="inner-section">
+                    <div class="inner-block">
 
-                    <a href="faqs.html">Blood Donation FAQs</a>
-                </div>
-                <div class="right-col">
-                    <ul>
-                        <li class="blood-type-stat blood-a">
-                            <h3>Type <span class="bloodtype">A</span></h3>
-                            <div class="chart-container">
-                                <div class="markers"></div>
-                                <div class="status"><label></label></div>
-                                <div class="chart"></div>
-                            </div>
-                        </li>
-                        <li class="blood-type-stat blood-b">
-                            <h3>Type <span class="bloodtype">B</span></h3>
-                            <div class="chart-container">
-                                <div class="markers"></div>
-                                <div class="status"><label></label></div>
-                                <div class="chart"></div>
-                            </div>
-                        </li>
-                        <li class="blood-type-stat blood-ab">
-                            <h3>Type <span class="bloodtype">AB</span></h3>
-                            <div class="chart-container">
-                                <div class="markers"></div>
-                                <div class="status"><label></label></div>
-                                <div class="chart"></div>
-                            </div>
-                        </li>
-                        <li class="blood-type-stat blood-o">
-                            <h3>Type <span class="bloodtype">O</span></h3>
-                            <div class="chart-container">
-                                <div class="markers"></div>
-                                <div class="status"><label></label></div>
-                                <div class="chart"></div>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="faqs.html">Blood Donation FAQs</a>
+                        <div class="left-col">
+                            <h2>If only <span class="redbold">1% more</span> people in 
+                                singapore donated blood, 
+                                shortages would disappear
+                            </h2>
+
+                            <a href="faqs.html">Blood Donation FAQs</a>
+                        </div>
+                        <div class="right-col">
+                            <ul>
+                                <li class="blood-type-stat blood-a">
+                                    <h3>Type <span class="bloodtype">A</span></h3>
+                                    <div class="chart-container">
+                                        <div class="markers"></div>
+                                        <div class="status"><label></label></div>
+                                        <div class="chart"></div>
+                                    </div>
+                                </li>
+                                <li class="blood-type-stat blood-b">
+                                    <h3>Type <span class="bloodtype">B</span></h3>
+                                    <div class="chart-container">
+                                        <div class="markers"></div>
+                                        <div class="status"><label></label></div>
+                                        <div class="chart"></div>
+                                    </div>
+                                </li>
+                                <li class="blood-type-stat blood-ab">
+                                    <h3>Type <span class="bloodtype">AB</span></h3>
+                                    <div class="chart-container">
+                                        <div class="markers"></div>
+                                        <div class="status"><label></label></div>
+                                        <div class="chart"></div>
+                                    </div>
+                                </li>
+                                <li class="blood-type-stat blood-o">
+                                    <h3>Type <span class="bloodtype">O</span></h3>
+                                    <div class="chart-container">
+                                        <div class="markers"></div>
+                                        <div class="status"><label></label></div>
+                                        <div class="chart"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a href="faqs.html">Blood Donation FAQs</a>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
 
             <div class="section where">
-                <a name="where"></a>
-                <h1><span class="redbold">Donate now.</span> 60 minutes of <br/>
-                    your time can save 3 lives</h1>
-                <div class="left-col">
-                    <p>Visit any of our 3 Blood Banks or look out for our Blood Mobiles coming to areas near you:</p>
-                    <ul>
-                        <li>
-                            <div class="date">05 September </div>
-                            <div class="time">10:00 AM </div>
-                            <div class="description">Bloodmobile @ Raffles Hospital</div>
-                        </li>
-                        <li>
-                            <div class="date">07 September </div>
-                            <div class="time">10:00 AM </div>
-                            <div class="description">Blood Donation Drive @ Buona Vista C2E </div>
-                        </li>
-                        <li>
-                            <div class="date">07 September </div>
-                            <div class="time">12:00 PM </div>
-                            <div class="description">Bloodmobile@Darul Ghufran Mosque (Tampines) </div>
-                        </li>
-                    </ul>
-                    <a href="https://www.google.com/calendar/embed?showCalendars=0&mode=AGENDA&showTitle=0&height=600&wkst=1&hl=en&bgcolor=%23FFFFFF&src=206u2ql56e9gkelav9rl3h0k34@group.calendar.google.com&color=%23528800&ctz=Asia/Singapore" target="_blank" class="view-all">View all</a>
+                <div class="inner-section">
+                    <a name="where"></a>
+                    <h1><span class="redbold">Donate now.</span> 60 minutes of <br/>
+                        your time can save 3 lives</h1>
+                    <div class="left-col">
+                        <p>Visit any of our 3 Blood Banks or look out for our Blood Mobiles coming to areas near you:</p>
+                        <ul>
+                            <li>
+                                <div class="date">05 September </div>
+                                <div class="time">10:00 AM </div>
+                                <div class="description">Bloodmobile @ Raffles Hospital</div>
+                            </li>
+                            <li>
+                                <div class="date">07 September </div>
+                                <div class="time">10:00 AM </div>
+                                <div class="description">Blood Donation Drive @ Buona Vista C2E </div>
+                            </li>
+                            <li>
+                                <div class="date">07 September </div>
+                                <div class="time">12:00 PM </div>
+                                <div class="description">Bloodmobile@Darul Ghufran Mosque (Tampines) </div>
+                            </li>
+                        </ul>
+                        <a href="https://www.google.com/calendar/embed?showCalendars=0&mode=AGENDA&showTitle=0&height=600&wkst=1&hl=en&bgcolor=%23FFFFFF&src=206u2ql56e9gkelav9rl3h0k34@group.calendar.google.com&color=%23528800&ctz=Asia/Singapore" target="_blank" class="view-all">View all</a>
 
-                    <select name="location" id="bloodbanklist">
-                        <option value="">Select Blood Bank</option>
-                        <option value="0">Bloodbank@HSA</option>
-                        <option value="1">Bloodbank@Woodlands</option>
-                        <option value="2">Bloodbank@Dhoby Ghaut</option>
-                    </select>
+                        <select name="location" id="bloodbanklist">
+                            <option value="">Select Blood Bank</option>
+                            <option value="0">Bloodbank@HSA</option>
+                            <option value="1">Bloodbank@Woodlands</option>
+                            <option value="2">Bloodbank@Dhoby Ghaut</option>
+                        </select>
 
-                    <div id="mobilemap" class="googlemap for-mobile"></div>
-
-                    <a href="http://www.facebook.com/sgredcross/app_253871564648008" target="_blank" class="btn-appt">Book Appointment</a>
+                        <a href="http://www.facebook.com/sgredcross/app_253871564648008" target="_blank" class="btn-appt for-desktop">Book Appointment</a>
+                    </div>
+                    <div class="right-col">
+                        <div id="desktopmap" class="googlemap" width="100%" height="400px"></div>
+                        <a href="http://www.facebook.com/sgredcross/app_253871564648008" target="_blank" class="btn-appt for-mobile">Book Appointment</a>
+                    </div>
                 </div>
-                <div class="right-col">
-                    <div id="desktopmap" class="googlemap for-desktop" width="100%" height="400px"></div>
-                </div>
-
             </div>
 
             <div class="section facebook">
-                
-                <div class="fb-like-box" data-href="http://www.facebook.com/sgredcross" data-width="950" data-height="200" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
-                <!--
-                <div class="fb-facepile" data-app-id="Display people who logged into a site using this app" data-href="http://facebook.com/sgredcross" data-action="A comma separated list of actions to show a Facepile for" data-width="500" data-height="90" data-max-rows="1" data-colorscheme="light" data-size="large" data-show-count="true"></div>
-                -->
-                <div class="footer-image"></div>
+                <div class="inner-section">
+                    
+                    <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fsgredcross&amp;width=700&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=416858361769897" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowTransparency="true"></iframe>
+
+                    <div class="footer-image"></div>
+                </div>
             </div>
 
             <div class="modal">
                 <div class="modal-container">
                     <div class="modal-box contactus">
-                        <a href="javascript:void();" class="close"></a>
-                        <div class="content"></div>
+                        <a href="#" class="close"></a>
+                        <div class="content">
+                            <div class="contact-form" id="content">
+    
+                                <div class="contact-header">
+                                  <span>CONTACT US</span>
+                                  <a href="#" class="close"></a>
+                                </div>
+                                
+                                <form class="form1" method="post" data-validate="parsley">
+                                  
+                                  <div class="success">Thank you for your enquiries, we will respond to you within 3 - 5 working days.</div>
+
+                                  <p class="note">*denotes mandatory field</p>
+                                  <fieldset>
+                                    
+                                    <div class="row">
+                                      <label>* Name</label>
+                                      <input name="name" id="contact-name" type="text" data-trigger="change" data-required="true" />
+                                    </div>
+
+                                    <div class="row">
+                                      <label>* Email</label>
+                                      <input name="email" id="contact-email" type="text" data-trigger="change" data-required="true" data-type="email" />
+                                    </div>
+
+                                    <div class="row">
+                                      <label>Mobile Phone</label>
+                                      <input name="phone" id="contact-phone" type="text" data-rangelength="[8,12]"  data-trigger="change" data-type="number" />
+                                    </div>
+                                    
+                                    <div class="row">
+                                      <label>* Verify</label>
+                                      <input name="verify" id="contact-verify" type="text" />
+                                      <span class="captcha"></span>
+                                      <span class="btn-reload"><img alt="Reload" src="img/reload.png" /></span>
+                                      <ul id="verify_fail" class="parsley-error-list" style="display: none;">
+                                        <li class="required" style="display: list-item;">Verify failed.</li>
+                                      </ul>
+                                    </div>
+
+                                    <div class="row">
+                                      <label>* Message</label>
+                                      <textarea rows="10" name="message" id="contact-message" data-trigger="change" data-required="true" data-trigger="keyup" data-rangelength="[20,2000]"></textarea>
+                                    </div>
+
+                                  </fieldset>
+                                  <div class="btn-send"><img class="btn-image" src="img/btn-send.png" ></div>
+
+                                </form>              
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-overlay"></div>
@@ -272,12 +344,16 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="js/vendor/jquery-ui.min.js"></script>
 
         <script src="fancybox/jquery.fancybox.pack.js"></script>
+        <script src="js/vendor/fancySelect.js"></script>
+
         <script src="js/vendor/parsley.min.js"></script>
-        <script src="js/vendor/excanvas.compiled.js"></script>
+
         <script type="text/javascript" src="js/vendor/jquery.easypiechart.min.js"></script>
+        <script src="js/vendor/excanvas.compiled.js"></script>
+        
         <script type='text/javascript' src='js/vendor/jquery-scrollspy.js'></script>
 
         <!--[if lte IE 8]>
@@ -288,154 +364,248 @@
 
         <script type="text/javascript">var switchTo5x=true;</script>
         <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-        <script type="text/javascript">stLight.options({ publisher: "e34cc7a5-219c-4111-8ad0-344853a9e716", 
-            doNotHash: true, 
-            doNotCopy: true, 
-            hashAddressBar: false, 
-            onhover: false, 
-            shorten:false, 
-            st_title:"Red Cross Connection" })
+        <script type="text/javascript">
+        if (stLight!=undefined) {
+            stLight.options({ publisher: "e34cc7a5-219c-4111-8ad0-344853a9e716", 
+                doNotHash: true, 
+                doNotCopy: true, 
+                hashAddressBar: false, 
+                onhover: false, 
+                shorten:false, 
+                st_title:"Red Cross Connection" })
+        }
         </script>
         
         <script src="js/main.js"></script>
         <script>
         $(document).ready(function() {
-            // google map initialization
-            var directionsDisplay;
-            var directionsService = new google.maps.DirectionsService();
-            var map;
-            var click = 0;
-            var start;
-            var end;
-            var markers = new Array();
-            var infoWindow;
-            var current_marker;
 
-            var sgcenter = new google.maps.LatLng(1.378308,103.807899);
-            
-            var locations = [
-                { lat : 1.2809352, lng : 103.8375668 },
-                { lat : 1.4359454, lng : 103.7861284 },
-                { lat : 1.3001956, lng : 103.8477121 }
-            ];
-
-            var mapProp = {
-                center:sgcenter,
-                zoom:11,
-                panControl:true,
-                zoomControl:true,
-                mapTypeControl:true,
-                scaleControl:true,
-                overviewMapControl:true,
-                mapTypeId:google.maps.MapTypeId.ROADMAP
-            };
-
-            var contentInfo1 =
-            '<div class="info-content">'+
-            '<div class="pull-left">'+
-            '<img src="img/logo-sgredcross.png">'+
-            '</div>'+
-            '<div class="infowindow pull-right">'+
-            '<p><b>Bloodbank@HSA</b><br/>'+
-            '<br>Blood Services Group'+
-            '<br>Health Sciences Authority (opposite Outram Park MRT Station)'+
-            '<br>11 Outram Road'+
-            '<br>Singapore 169078'+
-            '</p>'+
-            '</div>'+
-            '</div>';
-
-            var contentInfo2 =
-            '<div class="info-content">'+
-            '<div class="pull-left">'+
-            '<img src="img/logo-sgredcross.png">'+
-            '</div>'+
-            '<div class="infowindow pull-right">'+
-            '<p><b>Bloodbank@Woodlands</b><br/>'+
-            '<br>900 South Woodlands Drive'+
-            '<br>#05-07 Woodlands Civic Centre (opposite Causeway Point)'+
-            '<br>Singapore 730900'+
-            '</p>'+
-            '</div>'+
-            '</div>';
-
-            var contentInfo3 =
-            '<div class="info-content">'+
-            '<div class="pull-left">'+
-            '<img src="img/logo-sgredcross.png">'+
-            '</div>'+
-            '<div class="infowindow pull-right">'+
-            '<p><b>Bloodbank@Dhoby Ghaut</b><br/>'+
-            '<br>Dhoby Xchange'+
-            '<br>11 Orchard Road'+
-            '<br>#B1-05 to 09'+
-            '<br>Singapore 238826'+
-            '</p>'+
-            '</div>'+
-            '</div>';
-
-            var setMarker = function (bank, map, contentInfo){
-              var marker = new google.maps.Marker({
-                position:bank,
-                icon:'img/red-cross.png'
-              });
-
-              marker.setMap(map);
-              markers.push(marker);
-
-              marker.infowindow = new google.maps.InfoWindow({
-                content: contentInfo,
-                maxWidth: 256
-              });
-
-              google.maps.event.addListener(marker, 'click', function() {
-                if (current_marker) {
-                  current_marker.infowindow.close();
-                }
-                current_marker = marker;
-                marker.infowindow.open(map,marker);
-              });
+            // blood stat
+            maxwidth = $('html').css('max-width');
+            if (maxwidth == '767px') {
+                var chartsize = 70;
+                var lineChartWidth = 8;
+            } else {
+                var chartsize = 110;
+                var lineChartWidth = 15;
             }
 
-            var initialize = function ()
-            {
-              directionsDisplay = new google.maps.DirectionsRenderer();
-
-              //var elementmap = $('.for-mobile:visible').size() != 0 ? document.getElementById("mobilemap") : document.getElementById("desktopmap");
-
-              map = new google.maps.Map(document.getElementById("mobilemap") ,mapProp);
-              directionsDisplay.setMap(map);
-
-              setMarker(new google.maps.LatLng(locations[0].lat, locations[0].lng), map, contentInfo1);
-              setMarker(new google.maps.LatLng(locations[1].lat, locations[1].lng), map, contentInfo2);
-              setMarker(new google.maps.LatLng(locations[2].lat, locations[2].lng), map, contentInfo3);
-
-              map = new google.maps.Map(document.getElementById("desktopmap") ,mapProp);
-              directionsDisplay.setMap(map);
-
-              setMarker(new google.maps.LatLng(locations[0].lat, locations[0].lng), map, contentInfo1);
-              setMarker(new google.maps.LatLng(locations[1].lat, locations[1].lng), map, contentInfo2);
-              setMarker(new google.maps.LatLng(locations[2].lat, locations[2].lng), map, contentInfo3);
-            }
-
-            google.maps.event.addDomListener(window, 'load', initialize);
-
-            var zoomtoplace = function () 
-            {
-                if (current_marker) {
-                  current_marker.infowindow.close();
+            var setbloodstat_text = function(bloodpercent) {
+                var text = '';
+                switch (bloodpercent) {
+                    case '25' : 
+                        text = 'very<br/>low';
+                        break;
+                    case '50' : 
+                        text = 'low';
+                        break;
+                    case '75' : 
+                        text = 'healthy';
+                        break;
                 }
-                var i = parseInt($('#bloodbanklist').val());
-                var selected_location = new google.maps.LatLng(locations[i].lat, locations[i].lng)
-                map.setCenter(selected_location);
-                current_marker = markers[i];
-                markers[i].infowindow.open(map, markers[i]);
-
+                return text;
             };
 
-            $('#bloodbanklist').on('change', function() {
-                zoomtoplace();
+            $.ajax({
+                type:"GET",
+                url: "app/app.php?method=bloodstat",
+                success: function(data){
+                    var bloodstat = data.split('-');
+
+                    // hard code for now until the php to google spreadsheet is fixed
+                    bloodstat[0] = '50';
+                    bloodstat[1] = '50';
+                    bloodstat[2] = '75';
+                    bloodstat[3] = '25';
+
+                    $('.blood-a .chart').attr('data-percent', bloodstat[0]);
+                    $('.blood-b .chart').attr('data-percent', bloodstat[1]);
+                    $('.blood-o .chart').attr('data-percent', bloodstat[2]);
+                    $('.blood-ab .chart').attr('data-percent', bloodstat[3]);
+
+                    $('.blood-a .status label').html( setbloodstat_text(bloodstat[0]) );
+                    $('.blood-b .status label').html( setbloodstat_text(bloodstat[1]) );
+                    $('.blood-o .status label').html( setbloodstat_text(bloodstat[2]) );
+                    $('.blood-ab .status label').html( setbloodstat_text(bloodstat[3]) );
+
+                    $('.blood-a .chart').addClass( setbloodstat_text(bloodstat[0]).replace('<br/>','-') );
+                    $('.blood-b .chart').addClass( setbloodstat_text(bloodstat[1]).replace('<br/>','-') );
+                    $('.blood-o .chart').addClass( setbloodstat_text(bloodstat[2]).replace('<br/>','-') );
+                    $('.blood-ab .chart').addClass( setbloodstat_text(bloodstat[3]).replace('<br/>','-') );
+
+                    var chart = $('.chart').easyPieChart({
+                        animate: 2000,
+                        lineWidth: lineChartWidth,
+                        barColor: '#c1272c',
+                        trackColor:'#e1e1e1',
+                        scaleColor: false,
+                        size: chartsize,
+                    });
+
+                    $('.blood-a .chart').data('easyPieChart').update(bloodstat[0]);
+                    $('.blood-b .chart').data('easyPieChart').update(bloodstat[1]);
+                    $('.blood-o .chart').data('easyPieChart').update(bloodstat[2]);
+                    $('.blood-ab .chart').data('easyPieChart').update(bloodstat[3]);
+
+                }
             });
+
+            // google map initialization
+
+            // check if google plugin is accessble
+            if (google != undefined) {
+
+                var directionsDisplay;
+                var directionsService = new google.maps.DirectionsService();
+                var map;
+                var click = 0;
+                var start;
+                var end;
+                var markers = new Array();
+                var infoWindow;
+                var current_marker;
+
+                var sgcenter = new google.maps.LatLng(1.378308,103.807899);
+                
+                var locations = [
+                    { lat : 1.2809352, lng : 103.8375668 },
+                    { lat : 1.4359454, lng : 103.7861284 },
+                    { lat : 1.3001956, lng : 103.8477121 }
+                ];
+
+                var mapProp = {
+                    center:sgcenter,
+                    zoom:11,
+                    panControl:true,
+                    zoomControl:true,
+                    mapTypeControl:true,
+                    scaleControl:true,
+                    overviewMapControl:true,
+                    mapTypeId:google.maps.MapTypeId.ROADMAP
+                };
+
+                var contentInfo1 =
+                '<div class="info-content">'+
+                '<div class="pull-left">'+
+                '<img src="img/logo-sgredcross.png">'+
+                '</div>'+
+                '<div class="infowindow pull-right">'+
+                '<p><b>Bloodbank@HSA</b><br/>'+
+                '<br>Blood Services Group'+
+                '<br>Health Sciences Authority (opposite Outram Park MRT Station)'+
+                '<br>11 Outram Road'+
+                '<br>Singapore 169078'+
+                '</p>'+
+                '</div>'+
+                '</div>';
+
+                var contentInfo2 =
+                '<div class="info-content">'+
+                '<div class="pull-left">'+
+                '<img src="img/logo-sgredcross.png">'+
+                '</div>'+
+                '<div class="infowindow pull-right">'+
+                '<p><b>Bloodbank@Woodlands</b><br/>'+
+                '<br>900 South Woodlands Drive'+
+                '<br>#05-07 Woodlands Civic Centre (opposite Causeway Point)'+
+                '<br>Singapore 730900'+
+                '</p>'+
+                '</div>'+
+                '</div>';
+
+                var contentInfo3 =
+                '<div class="info-content">'+
+                '<div class="pull-left">'+
+                '<img src="img/logo-sgredcross.png">'+
+                '</div>'+
+                '<div class="infowindow pull-right">'+
+                '<p><b>Bloodbank@Dhoby Ghaut</b><br/>'+
+                '<br>Dhoby Xchange'+
+                '<br>11 Orchard Road'+
+                '<br>#B1-05 to 09'+
+                '<br>Singapore 238826'+
+                '</p>'+
+                '</div>'+
+                '</div>';
+
+                var setMarker = function (bank, map, contentInfo){
+                  var marker = new google.maps.Marker({
+                    position:bank,
+                    icon:'img/red-cross.png'
+                  });
+
+                  marker.setMap(map);
+                  markers.push(marker);
+
+                  marker.infowindow = new google.maps.InfoWindow({
+                    content: contentInfo,
+                    maxWidth: 256
+                  });
+
+                  google.maps.event.addListener(marker, 'click', function() {
+                    if (current_marker) {
+                      current_marker.infowindow.close();
+                    }
+                    current_marker = marker;
+                    marker.infowindow.open(map,marker);
+                  });
+                }
+
+                var initialize = function ()
+                {
+                  directionsDisplay = new google.maps.DirectionsRenderer();
+
+                  //var elementmap = $('.for-mobile:visible').size() != 0 ? document.getElementById("mobilemap") : document.getElementById("desktopmap");
+                  /*
+                  map = new google.maps.Map(document.getElementById("mobilemap") ,mapProp);
+                  directionsDisplay.setMap(mobile_map);
+
+                  setMarker(new google.maps.LatLng(locations[0].lat, locations[0].lng), map, contentInfo1);
+                  setMarker(new google.maps.LatLng(locations[1].lat, locations[1].lng), map, contentInfo2);
+                  setMarker(new google.maps.LatLng(locations[2].lat, locations[2].lng), map, contentInfo3);
+
+                  var selected_location = new google.maps.LatLng(locations[0].lat, locations[0].lng);
+                  mobile_map.setCenter(selected_location);
+                  markers[0].infowindow.open(mobile_map, markers[0]);
+                    */
+
+                  map = new google.maps.Map(document.getElementById("desktopmap") ,mapProp);
+                  directionsDisplay.setMap(map);
+
+                  setMarker(new google.maps.LatLng(locations[0].lat, locations[0].lng), map, contentInfo1);
+                  setMarker(new google.maps.LatLng(locations[1].lat, locations[1].lng), map, contentInfo2);
+                  setMarker(new google.maps.LatLng(locations[2].lat, locations[2].lng), map, contentInfo3);
+                }
+
+                google.maps.event.addDomListener(window, 'load', initialize);
+
+                var zoomtoplace = function () 
+                {
+                    try {
+                        if (current_marker) {
+                            current_marker.infowindow.close();
+                        }
+
+                        var i = parseInt($('#bloodbanklist').val());
+                        var selected_location = new google.maps.LatLng(locations[i].lat, locations[i].lng);
+                        
+                        //mobile_map.setCenter(selected_location);
+                        map.setCenter(selected_location);
+
+                        current_marker = markers[i];
+
+                        //markers[i].infowindow.open(mobile_map, markers[i]);
+                        markers[i].infowindow.open(map, markers[i]);
+                    } catch (err) {
+                    }
+                };
+
+                $('#bloodbanklist').bind('change', function() {
+                    zoomtoplace();
+                });
+
+                $('#bloodbanklist').fancySelect();
+            }
         });
         </script>
 

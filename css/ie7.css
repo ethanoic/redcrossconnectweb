@@ -71,8 +71,7 @@
         background-image: url(../img/blood_healthy.jpg); }
 
 .contact-form {
-  height: 500px;
-  width: 800px; }
+  height: 500px; }
 
 .form1 .fieldset {
   border: 1px solid red; }
@@ -85,3 +84,91 @@
 
 .contact-form {
   width: 620px; }
+
+.modal .modal-container .modal-box .close {
+  display: block; }
+.modal .modal-overlay {
+  height: 650px; }
+
+.modal-show {
+  height: 600px;
+  overflow: hidden; }
+  .modal-show iframe,
+  .modal-show .chart,
+  .modal-show .status {
+    display: none; }
+
+.contact-form .contact-header .close {
+  display: none; }
+
+@media only screen and (max-width: 768px) {
+  .modal .modal-container .modal-box .close {
+    display: none; }
+
+  .contact-form .contact-header .close {
+    display: block; }
+
+  .top-nav ul {
+    width: 100%;
+    display: block; }
+    .top-nav ul li {
+      width: 100%;
+      display: block; }
+
+  .release-hero {
+    width: 100%;
+    background-image: none; }
+    .release-hero .inner-background {
+      background-position: top right;
+      background-image: url(../img/release-the-hero-image-ie.png);
+      background-repeat: no-repeat;
+      width: 100%;
+      display: inline-block;
+      padding-top: 20px; }
+    .release-hero h1 {
+      padding: 0px;
+      width: 100%;
+      float: left;
+      background-image: url(../img/header_releasethehero-ie.png);
+      background-position: top left;
+      height: 135px;
+      margin-top: -10px; }
+    .release-hero .right-col {
+      width: 100%;
+      display: block;
+      float: left; }
+      .release-hero .right-col .video-player {
+        float: left;
+        display: block;
+        margin-top: 0px;
+        width: 100%; }
+
+  .bloodstats {
+    width: 100%;
+    float: left; }
+    .bloodstats .right-col {
+      width: 100%;
+      float: left; }
+      .bloodstats .right-col ul {
+        width: 100%;
+        margin-top: 10px;
+        float: left; }
+        .bloodstats .right-col ul li.blood-type-stat {
+          float: left;
+          height: auto;
+          width: 48%;
+          margin: 0px;
+          margin-bottom: 10px;
+          background-position: bottom center; }
+          .bloodstats .right-col ul li.blood-type-stat h3 {
+            width: 100%;
+            float: left; }
+          .bloodstats .right-col ul li.blood-type-stat .chart-container {
+            width: 100%;
+            min-height: 150px;
+            margin-left: auto;
+            margin-right: auto; }
+            .bloodstats .right-col ul li.blood-type-stat .chart-container canvas {
+              display: none; }
+          .bloodstats .right-col ul li.blood-type-stat .status br {
+            display: inline; } }

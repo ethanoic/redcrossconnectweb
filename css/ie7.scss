@@ -63,9 +63,9 @@
 						z-index: 3;
 					}
 					.status {
-					margin: 0px;
-					padding: 0px;
-					margin-left: -65px;
+						margin: 0px;
+						padding: 0px;
+						margin-left: -65px;
 						width:135px;
 						height:100px;
 						vertical-align: middle;
@@ -105,7 +105,6 @@
 
 .contact-form {
 	height: 500px;
-	width:800px;
 }
 
 .form1 .fieldset {
@@ -120,8 +119,156 @@
 	background-color: #ebe9e3;
 }
 
-
 .contact-form {
 	width:620px;
+}
+
+.modal {
+
+	.modal-container {
+
+		.modal-box {
+
+			.content {
+			}
+			.close {
+				display: block;
+			}
+		}
+	}
+	.modal-overlay {
+		height:650px;
+	}
+}
+
+.modal-show {
+	height:600px;
+	overflow: hidden;
+
+	iframe,
+	.chart,
+	.status {
+		display: none;
+	}
+}
+
+.contact-form .contact-header {
+	.close {
+		display: none;
+	}
+}
+
+@media only screen and (max-width : 768px) {
+	.modal {
+		.modal-container { 
+			.modal-box {
+				.close {
+					display: none;
+				}
+			}
+		}
+	}
+	.contact-form .contact-header {
+		.close {
+			display: block;
+		}
+	}
+	.top-nav {
+		ul {
+			width:100%;
+			display: block;
+
+			li {
+				width:100%;
+				display: block;
+			}
+		}
+	}
+	.release-hero {
+		width:100%;
+		background-image:none;
+
+		.inner-background {
+			background-position: top right;
+			background-image: url(../img/release-the-hero-image-ie.png);
+			background-repeat: no-repeat;
+			width:100%;
+			display: inline-block;
+			padding-top: 20px;
+		}
+
+		h1 {
+			padding: 0px;
+			width:100%;
+			float:left;
+			background-image: url(../img/header_releasethehero-ie.png);
+			background-position: top left;
+			height: 135px;
+			margin-top: -10px;
+		}
+
+		.right-col {
+			width:100%;
+			display: block;
+			float:left;
+
+			.video-player {
+				float:left;
+				display: block;
+				margin-top: 0px;
+				width:100%;
+			}
+		}
+	}
+
+	.bloodstats {
+		width:100%;
+		float:left;
+
+		.right-col {
+			width:100%;
+			float:left;
+
+			ul {
+				width:100%;
+				margin-top: 10px;
+				float:left;
+
+				li.blood-type-stat {
+					float:left;
+					height: auto;
+					width:48%;
+					margin: 0px;
+					margin-bottom: 10px;
+					background-position: bottom center;
+					
+					h3 { 
+						width:100%;
+						float:left;
+					}
+					.chart-container {
+						width:100%;
+						min-height:150px;
+						margin-left: auto;
+						margin-right: auto;
+
+						canvas {
+							display:none;
+						}
+
+					}
+					.status {
+						br {
+							display: inline;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.facebook {
+	}
+
 }
 

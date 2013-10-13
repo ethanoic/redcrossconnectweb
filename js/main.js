@@ -1,5 +1,13 @@
 
+
 $(document).ready(function() {
+	window.log = function(){
+	  log.history = log.history || [];   // store logs to an array for reference
+	  log.history.push(arguments);
+	  if(this.console){
+	    console.log( Array.prototype.slice.call(arguments) );
+	  }
+	};
 
 	// mobile menu
 	$('.menu').on('click', function(e) {
@@ -25,45 +33,6 @@ $(document).ready(function() {
 			$(this).parent().find('div').hide();
 	});
 
-	// fancybox for contact us form
-	// jQuery 1.9 has removed the `$.browser` property, fancybox relies on
-	// it, so we patch it here if it's missing.
-	// This has been copied from jQuery migrate 1.1.1.
-	if ( !jQuery.browser ) {
-	  var uaMatch = function( ua ) {
-	    ua = ua.toLowerCase();
-
-	    var match = /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
-	      /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
-	      /(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
-	      /(msie) ([\w.]+)/.exec( ua ) ||
-	      ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
-	      [];
-
-	    return {
-	      browser: match[ 1 ] || "",
-	      version: match[ 2 ] || "0"
-	    };
-	  };
-
-	  matched = uaMatch( navigator.userAgent );
-	  browser = {};
-
-	  if ( matched.browser ) {
-	    browser[ matched.browser ] = true;
-	    browser.version = matched.version;
-	  }
-
-	  // Chrome is Webkit, but Webkit is also Safari.
-	  if ( browser.chrome ) {
-	    browser.webkit = true;
-	  } else if ( browser.webkit ) {
-	    browser.safari = true;
-	  }
-
-	  jQuery.browser = browser;
-	};
-
 
 	// methods for contact us form
 	// captcha generation
@@ -77,177 +46,125 @@ $(document).ready(function() {
 	    return output;
 	};
 
-	$('.modal .close').on('click', function() {
-		$('body').removeClass('modal-show');
-		$('.modal').hide();
-	});
+	/*
+	$( '.form1' ).parsley();
+	captcha = generate(5).toUpperCase();
+	$('.captcha').html(captcha);
 
-	$('.contactus .content').load( "contact.html?rn=" + Math.random()*100, function() {
-		//var contact_content = $('#contact-content').html();
+	if ($('.contactus .content').size() > 0) {
+		$('.contactus .content').load( $('.contact-us').attr('href') + ' #content', function() {
+			//var contact_content = $('#contact-content').html();
+			//console.log($('.contactus .content').html());
+		});
+	}
+	*/
 
-		$('.contact-us').on('click', function() {
-			$('body').addClass('modal-show');
+	$('.contact-us').on('click', function(e) {
+		if ($(window).width() < 768) {
+		} else {
+			$('body').css('height', $(window).height() );
+			$('body>.page-container').css('height', $(window).height() );
+
 			$( '.form1' ).parsley();
 			captcha = generate(5).toUpperCase();
-			$('.modal').show();
-		});
-
-		captcha = generate(5).toUpperCase();
-
-		$('.captcha').html(captcha);
-
-		$( '.form1' ).parsley();
-
-		$('.btn-reload').bind('click', function() {
-			captcha = generate(5).toUpperCase();
 			$('.captcha').html(captcha);
-		});
 
-		$("#contact-verify").focusout(function(){
-			var verify_code = $("#contact-verify").val();
-			if (verify_code.toUpperCase() == captcha ) {
-				$('#verify_fail').hide();
-				$('#contact-verify').removeClass('parsley-error').addClass('parsley-success');
-			} else {
-			  	$('#verify_fail').show();
-			  	$('#contact-verify').addClass('parsley-error').removeClass('parsley-success');
-			}
-		});
-
-		$('.btn-image').bind('click', function() {
+			$('body').addClass('modal-show');
+			$('body>.page-container').addClass('modal-show');
 			
-			console.log('test');
+			$('.modal').show();	
 
-			$( '.form1' ).parsley( 'validate' );
-			var verify_code = $("#contact-verify").val();
-			
-			if (verify_code.toUpperCase() == captcha ) {
-			  var name = $("#contact-name").val();
-			  var email = $("#contact-email").val();
-			  var phone = $("#contact-phone").val();
-			  var subject = $("#contact-subject").val();
-			  var message= $("#contact-message").val();
-			  var dataString = 'name=' + name + '&email=' + email + '&phone=' + phone + '&subject=' + subject + '&message=' + message;
+			e.preventDefault();
+		}
+	});
 
-			  if ($( '.form1' ).parsley( 'validate' )) {
-			    $.ajax({
-			      type: "POST",
-			      url: "app/app.php",
-			      data: dataString,
-			      success: function(data){
-			      	console.log(data);
-			      	if (data == 'result=0') {
-			      		$('.success').fadeIn(1000);
-			      		$( '.form1 input' ).val('');
-			      		$( '.form1 textarea' ).val('');
-			      	} else
-			      	{
+	$('.close').bind('click', function(e) {
+		if (location.href.indexOf('contact-page.html')>=0) {
+			window.close();
+		} else {
+			$('body').removeClass('modal-show');
+			$('body>.page-container').removeClass('modal-show');
 
-			      	}
-			      }
-			    });
-			  }
-			}
-			return false;
-		});
+			$('.modal').hide();
+		}
+		e.preventDefault();
+	});
 
+	captcha = generate(5).toUpperCase();
+	$('.captcha').html(captcha);
 
-		/*
-		$('.contactus').html('');
+	$( '.form1' ).parsley();
 
-		$(".contact-us").fancybox({
-			'content' : contact_content,
-			'transitionIn' : 'none',
-			'transitionOut' : 'none',
-			'type' : 'html',
-			afterShow: function(current, previous) {
+	$('.btn-reload').bind('click', function() {
+		captcha = generate(5).toUpperCase();
+		$('.captcha').html(captcha);
+	});
 
-				
-			}
-		});
-		*/
+	$("#contact-verify").focusout(function(){
+		var verify_code = $("#contact-verify").val();
+		if (verify_code.toUpperCase() == captcha ) {
+			$('#verify_fail').hide();
+			$('#contact-verify').removeClass('parsley-error').addClass('parsley-success');
+		} else {
+		  	$('#verify_fail').show();
+		  	$('#contact-verify').addClass('parsley-error').removeClass('parsley-success');
+		}
+	});
+
+	$('.btn-image').bind('click', function() {
+		
+		$( '.form1' ).parsley( 'validate' );
+		var verify_code = $("#contact-verify").val();
+		
+		if (verify_code.toUpperCase() == captcha ) {
+		  var name = $("#contact-name").val();
+		  var email = $("#contact-email").val();
+		  var phone = $("#contact-phone").val();
+		  var subject = $("#contact-subject").val();
+		  var message= $("#contact-message").val();
+		  var dataString = 'name=' + name + '&email=' + email + '&phone=' + phone + '&subject=' + subject + '&message=' + message;
+
+		  if ($( '.form1' ).parsley( 'validate' )) {
+		    $.ajax({
+		      type: "POST",
+		      url: "app/app.php",
+		      data: dataString,
+		      success: function(data){
+		      	console.log(data);
+		      	if (data == 'result=0') {
+		      		alert('Thank you for your enquiries, we will respond to you within 3 - 5 working days.')
+		      		//$('.success').fadeIn(1000);
+		      		$( '.form1 input' ).val('');
+		      		$( '.form1 textarea' ).val('');
+		      		$('.modal').close();
+		      	} else
+		      	{
+
+		      	}
+		      }
+		    });
+		  }
+		}
+		return false;
 	});
 
 	// where to donate - view all donation schdules
-	$(".view-all").fancybox({
-	   'width' : '75%',
-	   'height' : '75%',
-	   'autoScale' : false,
-	   'transitionIn' : 'none',
-	   'transitionOut' : 'none',
-	   'type' : 'iframe'
-	});
+	if (typeof fancybox === 'undefined') {
+	} else {
+		$(".view-all").fancybox({
+		   'width' : '75%',
+		   'height' : '75%',
+		   'autoScale' : false,
+		   'transitionIn' : 'none',
+		   'transitionOut' : 'none',
+		   'type' : 'iframe'
+		});
+	}
 
 	if ($('.for-mobile:visible').size() != 0)
 	{
 		$('.fb-facepile').attr('data-width', 300);
 	}
-
-	// blood stat
-	maxwidth = $('html').css('max-width');
-	if (maxwidth == '767px') {
-		var chartsize = 70;
-		var lineChartWidth = 8;
-	} else {
-		var chartsize = 110;
-		var lineChartWidth = 15;
-	}
-
-	var setbloodstat_text = function(bloodpercent) {
-		var text = '';
-		switch (bloodpercent) {
-			case '25' : 
-				text = 'very<br/>low';
-				break;
-			case '50' : 
-				text = 'low';
-				break;
-			case '75' : 
-				text = 'healthy';
-				break;
-		}
-		return text;
-	};
-
-	$.ajax({
-	    type:"GET",
-	    url: "app/app.php?method=bloodstat",
-	    success: function(data){
-	    	var bloodstat = data.split('-');
-
-	    	// hard code for now until the php to google spreadsheet is fixed
-	    	bloodstat[0] = '50';
-	    	bloodstat[1] = '50';
-	    	bloodstat[2] = '75';
-	    	bloodstat[3] = '25';
-
-	        $('.blood-a .chart').attr('data-percent', bloodstat[0]);
-	        $('.blood-b .chart').attr('data-percent', bloodstat[1]);
-	        $('.blood-o .chart').attr('data-percent', bloodstat[2]);
-	        $('.blood-ab .chart').attr('data-percent', bloodstat[3]);
-
-	        $('.blood-a .status label').html( setbloodstat_text(bloodstat[0]) );
-	        $('.blood-b .status label').html( setbloodstat_text(bloodstat[1]) );
-	        $('.blood-o .status label').html( setbloodstat_text(bloodstat[2]) );
-	        $('.blood-ab .status label').html( setbloodstat_text(bloodstat[3]) );
-
-	        $('.blood-a .chart').addClass( setbloodstat_text(bloodstat[0]).replace('<br/>','-') );
-	        $('.blood-b .chart').addClass( setbloodstat_text(bloodstat[1]).replace('<br/>','-') );
-	        $('.blood-o .chart').addClass( setbloodstat_text(bloodstat[2]).replace('<br/>','-') );
-	        $('.blood-ab .chart').addClass( setbloodstat_text(bloodstat[3]).replace('<br/>','-') );
-
-			$('.chart').easyPieChart({
-				animate: 2000,
-				lineWidth: lineChartWidth,
-				barColor: '#c1272c',
-				trackColor:'#e1e1e1',
-				scaleColor: false,
-				size: chartsize
-			});
-
-
-	    }
-	});
 	
 	var path_parts = window.location.pathname.split('/');
 	var path = '/';
@@ -260,8 +177,11 @@ $(document).ready(function() {
 	$( window ).resize(function() {
 		// 768px breakpoint
 		if ($(window).width() >= 768) {
-
 			$('.top-nav ul').show();
+
+			if ($('body').hasClass('modal-show'))
+				$('body').removeClass('modal-show');
+
 		} else {
 			$('.top-nav ul').hide();
 		}
@@ -272,20 +192,25 @@ $(document).ready(function() {
 		var section_position = $(this).position();
 
 		$(this).scrollspy({
-			min: section_position.top,
+			min: section_position.top - 75,
 			max: section_position.top + $(this).height(),
 			onEnter : function(element, position) {
 				var anchor = $(section).find('a').attr('name');
-				if (anchor == undefined) {
+				if (typeof anchor === 'undefined') {
 					anchor = $(section).prev().find('a').attr('name');
 				}
-				console.log(anchor);
 
 				$('.sticky-nav .active').removeClass('active');
 				$('.sticky-nav a[href="#' + anchor + '"]').addClass('active');
 
 				$('.top-nav .active').removeClass('active');
-				$('.top-nav a[href="#' + anchor + '"]').parent().addClass('active');
+
+				if ($(section).hasClass('release-hero') || $(section).hasClass('bloodstats') ) {
+					$('.top-nav a[href="#how"]').parent().addClass('active');
+				} else {
+					$('.top-nav a[href="#' + anchor + '"]').parent().addClass('active');
+				}
+
 			},
 			onLeave : function(element, position) {
 
@@ -293,16 +218,16 @@ $(document).ready(function() {
 		});
 	})
 
-	$('.top-nav li a, .sticky-nav li a').on('click', function(e) {
+
+	$('.top-nav li a, .sticky-nav li a, .video-link').on('click', function(e) {
 		$('.top-nav li.active').removeClass('active');
 
 		if ($(this).attr('href')!='faqs.html' && !$(this).hasClass('contact-us')) {
-
 			
 			$(this).parent().addClass('active');
 
 			$('html, body').animate({
-		        scrollTop: $('a[name="' + $(this).attr('href').replace('#', '') + '"]').offset().top - 70
+		        scrollTop: $('a[name="' + $(this).attr('href').replace('#', '') + '"]').parent().offset().top - 75
 		    }, {
 		    	duration: 500,
 		    	specialEasing: 'easeInOutQuint'
@@ -337,5 +262,7 @@ $(document).ready(function() {
 	    e.preventDefault();
 		// scroll to the sections
 	});
+
+	
 
 });
