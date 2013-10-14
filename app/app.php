@@ -77,6 +77,7 @@ if (isset($_GET['method']) == 'bloodstat') {
 	$blood_b = 0;
 	$blood_o = 0;
 	$blood_ab = 0;
+	$date_row = '';
 
 	if (count($listFeed->entries) > 0) {
 		$rowData = $listFeed->entries[0]->getCustom();
@@ -95,7 +96,8 @@ if (isset($_GET['method']) == 'bloodstat') {
 
 		$listFeed = $spreadsheetService->getListFeed($query);
 
-		for($i = (count($listFeed->entries)-1); $i>0; $i--) {
+		for($i = (count($listFeed->entries)-1); $i>0 
+			&& ($blood_a == '' && $blood_b == '' && $blood_o == '' && $blood_ab == ''); $i--) {
 			$rowData = $listFeed->entries[$i]->getCustom();
 
 			if ($rowData[1]->getText()!='' && $rowData[2]->getText()!='' && $rowData[3]->getText()!='' && $rowData[4]->getText()!='') {
@@ -104,6 +106,7 @@ if (isset($_GET['method']) == 'bloodstat') {
 				$blood_b = intval($rowData[2]->getText());
 				$blood_o = intval($rowData[3]->getText());
 				$blood_ab = intval($rowData[4]->getText());
+				$date_row = $rowData[0]->getText();
 			}			
 		}
 	}
@@ -137,7 +140,7 @@ if (isset($_GET['method']) == 'bloodstat') {
 	else if ($blood_ab >= 810)
 		$blood_ab = '75';
 
-	echo $blood_a.'-'.$blood_a.'-'.$blood_o.'-'.$blood_ab;
+	echo $blood_a.'-'.$blood_a.'-'.$blood_o.'-'.$blood_ab.'-'.$date_row;
 }
 
 

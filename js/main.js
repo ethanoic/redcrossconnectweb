@@ -80,7 +80,7 @@ $(document).ready(function() {
 
 	$('.close').bind('click', function(e) {
 		if (location.href.indexOf('contact-page.html')>=0) {
-			window.close();
+			history.back();
 		} else {
 			$('body').removeClass('modal-show');
 			$('body>.page-container').removeClass('modal-show');
@@ -177,6 +177,7 @@ $(document).ready(function() {
 	$( window ).resize(function() {
 		// 768px breakpoint
 		if ($(window).width() >= 768) {
+			console.log('show menu');
 			$('.top-nav ul').show();
 
 			if ($('body').hasClass('modal-show'))
@@ -186,37 +187,6 @@ $(document).ready(function() {
 			$('.top-nav ul').hide();
 		}
 	});
-
-	$('.section').each(function() {
-		var section = $(this);
-		var section_position = $(this).position();
-
-		$(this).scrollspy({
-			min: section_position.top - 75,
-			max: section_position.top + $(this).height(),
-			onEnter : function(element, position) {
-				var anchor = $(section).find('a').attr('name');
-				if (typeof anchor === 'undefined') {
-					anchor = $(section).prev().find('a').attr('name');
-				}
-
-				$('.sticky-nav .active').removeClass('active');
-				$('.sticky-nav a[href="#' + anchor + '"]').addClass('active');
-
-				$('.top-nav .active').removeClass('active');
-
-				if ($(section).hasClass('release-hero') || $(section).hasClass('bloodstats') ) {
-					$('.top-nav a[href="#how"]').parent().addClass('active');
-				} else {
-					$('.top-nav a[href="#' + anchor + '"]').parent().addClass('active');
-				}
-
-			},
-			onLeave : function(element, position) {
-
-			}
-		});
-	})
 
 
 	$('.top-nav li a, .sticky-nav li a, .video-link').on('click', function(e) {
@@ -233,15 +203,19 @@ $(document).ready(function() {
 		    	specialEasing: 'easeInOutQuint'
 		    });
 
+		    if ($(window).width() < 768) {
+		    	$('.top-nav ul').hide();
+		    }
+
 		    e.preventDefault();
 		}
 		// scroll to the sections
 	});
 
 	$('.faq-category li a').on('click', function(e) {
-		
+
 		$('html, body').animate({
-	        scrollTop: $('a[name="' + $(this).attr('href').replace('#', '') + '"]').offset().top - 50
+	        scrollTop: $('a[name="' + $(this).attr('href').replace('#', '') + '"]').parent().offset().top - 60
 	    }, {
 	    	duration: 500,
 	    	specialEasing: 'easeInOutQuint'

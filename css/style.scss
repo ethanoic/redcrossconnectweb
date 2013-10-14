@@ -2,6 +2,7 @@
 
 @font-face {
 	font-family: 'ITCAvantGardeStd-Bk';
+	src: url('../fonts/ITCAvantGardeStd-Bk.eot');
 	src: url('../fonts/ITCAvantGardeStd-Bk.eot?#iefix') format('embedded-opentype'),
 		url('../fonts/ITCAvantGardeStd-Bk.woff') format('woff'), 
 		url('../fonts/ITCAvantGardeStd-Bk.ttf') format('truetype'), 
@@ -10,14 +11,17 @@
 
 @font-face {
 	font-family: 'ITCAvantGardeStd-Md';
+	src: url('../fonts/ITCAvantGardeStd-Md.eot');
 	src: url('../fonts/ITCAvantGardeStd-Md.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/ITCAvantGardeStd-Md.woff') format('woff'), 
+		url('../fonts/ITCAvantGardeStd-Md.woff') format('woff'), 
 		url('../fonts/ITCAvantGardeStd-Md.ttf') format('truetype'), 
-		url('../fonts/ITCAvantGardeStd-Md.svg') format('svg');
+		url('../fonts/ITCAvantGardeStd-Md.svg') format('svg'),
+		url('../fonts/ITCAvantGardeStd-Md.eot?#iefix');
 }
 
 @font-face {
 	font-family: 'ITCAvantGardeStd-Demi';
+	src: url('../fonts/ITCAvantGardeStd-Demi.eot');
 	src: url('../fonts/ITCAvantGardeStd-Demi.eot?#iefix') format('embedded-opentype'),
 		url('../fonts/ITCAvantGardeStd-Demi.woff') format('woff'), 
 		url('../fonts/ITCAvantGardeStd-Demi.ttf') format('truetype'), 
@@ -26,6 +30,7 @@
 
 @font-face {
 	font-family: 'ITCAvantGardeStd-XLt';
+	src: url('../fonts/ITCAvantGardeStd-XLt.eot');
 	src: url('../fonts/ITCAvantGardeStd-XLt.eot?#iefix') format('embedded-opentype'),
 		url('../fonts/ITCAvantGardeStd-XLt.woff') format('woff'), 
 		url('../fonts/ITCAvantGardeStd-XLt.ttf') format('truetype'), 
@@ -34,6 +39,7 @@
 
 @font-face {
 	font-family: 'ITCAvantGardeStd-Bold';
+	src: url('../fonts/ITCAvantGardeStd-Bold.eot');
 	src: url('../fonts/ITCAvantGardeStd-Bold.eot?#iefix') format('embedded-opentype'),
 		url('../fonts/ITCAvantGardeStd-Bold.woff') format('woff'), 
 		url('../fonts/ITCAvantGardeStd-Bold.ttf') format('truetype'), 
@@ -543,7 +549,7 @@ a {
 		background-repeat: no-repeat;
 		background-position: 0px 230px;
 		padding-right: 48px;
-		height:615px;
+		height:660px;
 	}
 
 	h1 {
@@ -1148,10 +1154,19 @@ a {
 
 .category-section {
 
-	padding-left: 60px;
-	padding-right: 60px;
+	float:left;
+	width:100%;
+	padding-left: 0px;
+	padding-right: 0px;
 	padding-top: 55px;
 	padding-bottom: 55px;
+
+	.inner-section {
+		padding-left: 0px;
+		padding-right: 115px;
+		min-width: 970px;
+		width: 970px;
+	}
 
 	h2 {
 		font-weight: normal;
@@ -1204,18 +1219,32 @@ a {
 @media only screen and (max-width : 768px) {
 
 	body {
+		min-width: 320px;
+
 		.page-container {
 			max-width:1200px;
 			min-width:320px;
 			width:100%;
 		}
 
-		.inner-section {
+		.section {
+			padding-left:0px;
+			padding-right: 0px;
 			width:100%;
 			min-width:100%;
 			max-width: 100%;
-			margin-left:auto;
-			margin-right:auto;
+			display: block;
+			float: left;
+		}
+
+		.inner-section {
+			padding-left:0px;
+			padding-right: 0px;
+			width:100%;
+			min-width:100%;
+			max-width: 100%;
+			display: block;
+			float: left;
 
 			.inner-block {
 				width:100%;
@@ -1307,13 +1336,14 @@ a {
 	}
 
 	.logo-redcrossconnect {
-		width:71.125%;
-		max-width:71.125%;
+		width:76.75%;
 		height:30px;
 		min-width:200px;
 		min-height: 30px;
 		margin-left: 0px;
 		margin-right: 0px;
+		text-align: center;
+
 		img {
 			max-width:100px;
 		}
@@ -1321,9 +1351,15 @@ a {
 
 	.logo-sgredcross {
 		width:9.375%;
-		max-width:30px;
+		max-width: 30px;
+		min-width: 28px;
+		margin-right: 1.5%;
 		height:30px;
-		margin-right:2.6875%;
+		margin-right:0px;
+		img {
+			width:100%;
+			max-width:100%;
+		}
 	}
 
 	.sticky-nav {
@@ -1338,17 +1374,17 @@ a {
 		height:45px;
 		background-position: 0px -25px;
 
-
 		.menu {
 			background-image: url(../img/btn-menu.png);
 			background-size: contain;
 			background-repeat: no-repeat;
-			width:25px;
+			width:9.375%;
+			min-width: 28px;
 			height:21px;
 			display: inline-block;
 			margin-top: 13px;
-			margin-left: 10px;
-			margin-right: 10px;
+			margin-left: 1.5%;
+			margin-right: 1.5%;
 			float:left;
 		}
 		ul {
@@ -1371,14 +1407,6 @@ a {
 				}
 			}
 		}
-	}
-
-	.section {
-		padding-top: 5px;
-		padding-left: 3.125%;
-		padding-right: 3.125%;
-		width:93.75%;
-		padding-bottom: 10px;
 	}
 
 	.reflect {
@@ -1462,7 +1490,7 @@ a {
 			display: block;
 			margin-top: 0px;
 			padding-bottom: 10px;
-			padding-top: 35px;
+			padding-top: 5px;
 			width: 45%;
 			float: right;
 			text-align: center;
@@ -1540,6 +1568,7 @@ a {
 			background-position: 185% 2px;
 			background-size: 71%;
 			padding-right: 0px;
+			height: 535px;
 		}
 
 		h1 {
@@ -1572,6 +1601,7 @@ a {
 			.video-player {
 				float:left;
 				width:100%;
+				height: 80%;
 				max-height:300px;
 				margin-top: 0px;
 				background-image:none;
@@ -1580,7 +1610,7 @@ a {
 				object,
 				embed {
 				    width: 100%;
-				    height: 70%;
+				    height: 80%;
 				}
 			}	
 
@@ -1642,7 +1672,7 @@ a {
 
 	.where {
 		text-align: center;
-		height: 1000px;
+		height:auto;
 
 		h1 {
 			font-size:3em;
@@ -1701,25 +1731,42 @@ a {
 		}
 	}
 
-	.faq {
-		.left-col {
-			width:100%;
-			h1 {
-				font-size: 2.5em;
-				text-align: center;
+	body {
+		.faq {
+			width:97%;
+			max-width:97%;
+			min-width: 97%;
+			padding-left: 1.5%;
+			padding-right: 1.5%;
+
+			.left-col {
+				width:100%;
+				h1 {
+					font-size: 2.5em;
+					text-align: center;
+				}
+			}
+			.cover-img {
+				display: none;
 			}
 		}
-		.cover-img {
-			display: none;
-		}
-	}
 
-	.category-section {
-		width:100%;
-		padding-left: 10px;
-		padding-right: 10px;
-		padding-top: 20px;
-		padding-bottom: 20px;
+		.category-section {
+			float:left;
+			width:97%;
+			padding-left: 1.5%;
+			padding-right: 1.5%;
+			padding-top: 20px;
+			padding-bottom: 20px;
+
+			.inner-section {
+				padding-left: 0px;
+				padding-right: 0px;
+				min-width: 100%;
+				width: 100%;
+			}
+		}
+
 	}
 
 	.modal {

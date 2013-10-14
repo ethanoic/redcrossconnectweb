@@ -2,16 +2,13 @@
 .how-app .app-links {
   padding-left: 16px; }
 
-.release-hero {
+.release-hero h1 {
   display: block;
-  width: 1200px; }
-  .release-hero h1 {
-    display: block;
-    float: left; }
-  .release-hero h2 {
-    display: block;
-    width: 533px;
-    float: left; }
+  float: left; }
+.release-hero h2 {
+  display: block;
+  width: 533px;
+  float: left; }
 
 .bloodstats .right-col {
   display: block;
@@ -88,7 +85,7 @@
 .modal .modal-container .modal-box .close {
   display: block; }
 .modal .modal-overlay {
-  height: 650px; }
+  height: 950px; }
 
 .modal-show {
   height: 600px;
@@ -110,7 +107,7 @@
 
   .top-nav ul {
     width: 100%;
-    display: block; }
+    display: none; }
     .top-nav ul li {
       width: 100%;
       display: block; }

@@ -9,8 +9,6 @@
 }
 
 .release-hero {
-	display: block;
-	width:1200px;
 
 	h1 {
 		display: block;
@@ -137,7 +135,7 @@
 		}
 	}
 	.modal-overlay {
-		height:650px;
+		height:950px;
 	}
 }
 
@@ -147,7 +145,7 @@
 
 	iframe,
 	.chart,
-	.status {
+	.status, {
 		display: none;
 	}
 }
@@ -176,7 +174,7 @@
 	.top-nav {
 		ul {
 			width:100%;
-			display: block;
+			display: none;
 
 			li {
 				width:100%;

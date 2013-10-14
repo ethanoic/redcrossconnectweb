@@ -216,7 +216,7 @@
                             <a href="faqs.html">Blood Donation FAQs</a>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -410,18 +410,16 @@
                 type:"GET",
                 url: "app/app.php?method=bloodstat",
                 success: function(data){
-                    var bloodstat = data.split('-');
 
                     // hard code for now until the php to google spreadsheet is fixed
-                    bloodstat[0] = '50';
-                    bloodstat[1] = '50';
-                    bloodstat[2] = '75';
-                    bloodstat[3] = '25';
+                    data = '25-25-75-25-10/11/2013';
 
-                    $('.blood-a .chart').attr('data-percent', bloodstat[0]);
-                    $('.blood-b .chart').attr('data-percent', bloodstat[1]);
-                    $('.blood-o .chart').attr('data-percent', bloodstat[2]);
-                    $('.blood-ab .chart').attr('data-percent', bloodstat[3]);
+                    var bloodstat = data.split('-');
+
+                    //$('.blood-a .chart').attr('data-percent', bloodstat[0]);
+                    //$('.blood-b .chart').attr('data-percent', bloodstat[1]);
+                    //$('.blood-o .chart').attr('data-percent', bloodstat[2]);
+                    //$('.blood-ab .chart').attr('data-percent', bloodstat[3]);
 
                     $('.blood-a .status label').html( setbloodstat_text(bloodstat[0]) );
                     $('.blood-b .status label').html( setbloodstat_text(bloodstat[1]) );
@@ -439,7 +437,7 @@
                         barColor: '#c1272c',
                         trackColor:'#e1e1e1',
                         scaleColor: false,
-                        size: chartsize,
+                        size: chartsize
                     });
 
                     $('.blood-a .chart').data('easyPieChart').update(bloodstat[0]);
@@ -605,6 +603,38 @@
                 });
 
                 $('#bloodbanklist').fancySelect();
+
+                $('.section').each(function() {
+                    var section = $(this);
+                    var section_position = $(this).position();
+
+                    $(this).scrollspy({
+                        min: section_position.top - 75,
+                        max: section_position.top + $(this).height(),
+                        onEnter : function(element, position) {
+
+                            var anchor = $(section).find('a').attr('name');
+                            if (typeof anchor === 'undefined') {
+                                anchor = $(section).prev().find('a').attr('name');
+                            }
+
+                            $('.sticky-nav .active').removeClass('active');
+                            $('.sticky-nav a[href="#' + anchor + '"]').addClass('active');
+
+                            $('.top-nav .active').removeClass('active');
+
+                            if ($(section).hasClass('release-hero') || $(section).hasClass('bloodstats') ) {
+                                $('.top-nav a[href="#how"]').parent().addClass('active');
+                            } else {
+                                $('.top-nav a[href="#' + anchor + '"]').parent().addClass('active');
+                            }
+
+                        },
+                        onLeave : function(element, position) {
+
+                        }
+                    });
+                })
             }
         });
         </script>

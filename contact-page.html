@@ -34,7 +34,7 @@
         <div class="page-container" >
 
             <div class="top-nav">
-                <div class="page-container">
+                <div class="inner-section">
                     <a href="javascript:void(0);" class="menu"></a>
                     <a href="index.html" class="logo-redcrossconnect"><img src="img/logo.png"/></a>
                     <ul>
@@ -48,61 +48,63 @@
             </div>
 
             <div class="section contact">
-                <div class="modal">
-                    <div class="modal-container">
-                        <div class="modal-box contactus">
-                            <a href="#" class="close"></a>
-                            <div class="content">
+                <div class="inner-section">
+                    <div class="modal">
+                        <div class="modal-container">
+                            <div class="modal-box contactus">
+                                <a href="javascript:history.back();" class="close"></a>
+                                <div class="content">
 
-                                <div class="contact-form" id="content">
-                        
-                                    <div class="contact-header">
-                                      <span>CONTACT US</span>
+                                    <div class="contact-form" id="content">
+                            
+                                        <div class="contact-header">
+                                          <span>CONTACT US</span>
+                                        </div>
+                                        
+                                        <form class="form1" method="post" data-validate="parsley">
+
+                                          <p class="note">*denotes mandatory field</p>
+                                          <fieldset>
+                                            
+                                            <div class="row">
+                                              <label>* Name</label>
+                                              <input name="name" id="contact-name" type="text" data-trigger="change" data-required="true" />
+                                            </div>
+
+                                            <div class="row">
+                                              <label>* Email</label>
+                                              <input name="email" id="contact-email" type="text" data-trigger="change" data-required="true" data-type="email" />
+                                            </div>
+
+                                            <div class="row">
+                                              <label>Mobile Phone</label>
+                                              <input name="phone" id="contact-phone" type="text" data-rangelength="[8,12]"  data-trigger="change" data-type="number" />
+                                            </div>
+                                            
+                                            <div class="row">
+                                              <label>* Verify</label>
+                                              <input name="verify" id="contact-verify" type="text" /><span class="captcha"></span><span class="btn-reload"><img alt="Reload" src="img/reload.png" /><span>
+                                              <ul id="verify_fail" class="parsley-error-list" style="display: none;">
+                                                <li class="required" style="display: list-item;">Verify failed.</li>
+                                              </ul>
+                                            </div>
+
+                                            <div class="row">
+                                              <label>* Message</label>
+                                              <textarea rows="10" name="message" id="contact-message" data-trigger="change" data-required="true" data-trigger="keyup" data-rangelength="[20,2000]"></textarea>
+                                            </div>
+
+                                          </fieldset>
+                                          <div class="btn-send"><img class="btn-image" src="img/btn-send.png" ></div>
+                                        </form>              
                                     </div>
-                                    
-                                    <form class="form1" method="post" data-validate="parsley">
-
-                                      <p class="note">*denotes mandatory field</p>
-                                      <fieldset>
-                                        
-                                        <div class="row">
-                                          <label>* Name</label>
-                                          <input name="name" id="contact-name" type="text" data-trigger="change" data-required="true" />
-                                        </div>
-
-                                        <div class="row">
-                                          <label>* Email</label>
-                                          <input name="email" id="contact-email" type="text" data-trigger="change" data-required="true" data-type="email" />
-                                        </div>
-
-                                        <div class="row">
-                                          <label>Mobile Phone</label>
-                                          <input name="phone" id="contact-phone" type="text" data-rangelength="[8,12]"  data-trigger="change" data-type="number" />
-                                        </div>
-                                        
-                                        <div class="row">
-                                          <label>* Verify</label>
-                                          <input name="verify" id="contact-verify" type="text" /><span class="captcha"></span><span class="btn-reload"><img alt="Reload" src="img/reload.png" /><span>
-                                          <ul id="verify_fail" class="parsley-error-list" style="display: none;">
-                                            <li class="required" style="display: list-item;">Verify failed.</li>
-                                          </ul>
-                                        </div>
-
-                                        <div class="row">
-                                          <label>* Message</label>
-                                          <textarea rows="10" name="message" id="contact-message" data-trigger="change" data-required="true" data-trigger="keyup" data-rangelength="[20,2000]"></textarea>
-                                        </div>
-
-                                      </fieldset>
-                                      <div class="btn-send"><img class="btn-image" src="img/btn-send.png" ></div>
-                                    </form>              
                                 </div>
                             </div>
                         </div>
+                        <div class="modal-overlay"></div>
                     </div>
-                    <div class="modal-overlay"></div>
-                </div>
 
+                </div>
             </div>
         </div>
 
