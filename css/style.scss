@@ -313,6 +313,11 @@ a {
 	}
 }
 
+.scrolldown-icon {
+	background-image: url(../img/scroll_down_button.png);
+	background-repeat: no-repeat;
+	background-position: top right;
+}
 
 .st_sharethis_custom {
 	display: block;
@@ -753,6 +758,7 @@ a {
 		}
 	}
 
+
 	.btn-appt {
 		color:#ffffff;
 		font-family: 'ITCAvantGardeStd-Bk';
@@ -778,6 +784,9 @@ a {
 
 		.btn-appt {
 			display: block;
+			float:left;
+			clear: both;
+			margin-bottom: 5px;
 		}
 
 		p {
@@ -817,9 +826,74 @@ a {
 			}
 		}
 
+		.view-all {
+			display: inline-block;
+			float:left;
+			clear: both;
+			margin-bottom: 10px;
+		}
+
 		select {
 			margin-top: 20px;
 			display: block;
+		}
+
+		.bloodbanks-style-list {
+			width:220px;
+			clear: both;
+			float:left;
+			color:#595753;
+			font-size: 13px;
+			text-align: left;
+			padding-right: 16px;
+
+			.selecteditem {
+				cursor: pointer;
+				width:90%;
+				height: 20px;
+				background-color: #dcdbd7;
+				background-image: url(../img/select-list-icon.png);
+				background-repeat: no-repeat;
+				background-position: 95% 50%;
+				border:1px solid #8B887E;
+				padding: 5%;
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+
+			ul {
+				background-color: #dcdbd7;
+				position: absolute;
+				z-index: 2;
+				margin: 0px;
+				padding: 0px;
+				display: none;
+				width:220px;
+				li {
+					margin: 0px;
+					padding: 0px;
+					clear: both;
+					width:90%;
+					height: 22px;
+					padding: 5%;
+					padding-top: 5px;
+					padding-bottom: 5px;
+					cursor: pointer;
+					line-height: 22px;
+				}
+				li.selected {
+					background-color: #b5b4af;
+				}
+				li:hover {
+					background-color: #b5b4af;
+				}
+			}
+			ul.closed {
+				display: none;
+			}
+			ul.opened {
+				display: block;
+			}
 		}
 	}
 
@@ -1265,7 +1339,6 @@ a {
 		padding-top:45px;
 	}
 
-
 	.form1 {
 		padding: 0px;
 		width:97.5%;
@@ -1467,7 +1540,6 @@ a {
 			}
 		}
 
-
 		.app-links {
 			margin: 0px;
 			display: block;
@@ -1625,7 +1697,6 @@ a {
 		}
 	}
 
-
 	.bloodstats {
 		.left-col {
 			width:100%;
@@ -1669,7 +1740,6 @@ a {
 		}
 	}
 
-
 	.where {
 		text-align: center;
 		height:auto;
@@ -1690,6 +1760,7 @@ a {
 		.left-col {
 			width:100%;
 			display: block;
+			padding-bottom: 10px;
 
 			select {
 				display: block;
@@ -1701,11 +1772,23 @@ a {
 				display: none;
 			}
 
+			.view-all {
+				float:none;
+			}
+
 			.googlemap {
 				width:100%;
 				height:350px;
 				margin-top: 15px;
 			}
+
+			.bloodbanks-style-list {
+				float:none;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+
 		}
 		.right-col {
 			width:100%;
@@ -1719,7 +1802,6 @@ a {
 
 		}
 	}
-
 
 	.facebook {
 		margin-top:0px;

@@ -14,11 +14,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+        <link rel="icon" type="image/ico" href="favicon.ico"/>
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
-        <link rel="stylesheet" href="css/fancySelect.css">
 
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/style.css">
@@ -137,6 +136,7 @@
             </div>
 
             <div class="section release-hero">
+                <span class="scrolldown-icon"></span>
                 <div class="inner-section">
 
                     <div class="inner-background">
@@ -244,16 +244,30 @@
                                 <div class="description">Bloodmobile@Darul Ghufran Mosque (Tampines) </div>
                             </li>
                         </ul>
+
                         <a href="https://www.google.com/calendar/embed?showCalendars=0&mode=AGENDA&showTitle=0&height=600&wkst=1&hl=en&bgcolor=%23FFFFFF&src=206u2ql56e9gkelav9rl3h0k34@group.calendar.google.com&color=%23528800&ctz=Asia/Singapore" target="_blank" class="view-all">View all</a>
 
-                        <select name="location" id="bloodbanklist">
+                        
+                        <select name="location" id="bloodbanklist" style="display:none;">
                             <option value="">Select Blood Bank</option>
                             <option value="0">Bloodbank@HSA</option>
                             <option value="1">Bloodbank@Woodlands</option>
                             <option value="2">Bloodbank@Dhoby Ghaut</option>
                         </select>
 
+                        <div class="bloodbanks-style-list">
+                            <div class="selecteditem">
+                            </div>
+                            <ul>
+                                <li>Select Blood Bank</li>
+                                <li data-value="0">Bloodbank@HSA</li>
+                                <li data-value="1">Bloodbank@Woodlands</li>
+                                <li data-value="2">Bloodbank@Dhoby Ghaut</li>
+                            </ul>
+                        </div>
+
                         <a href="http://www.facebook.com/sgredcross/app_253871564648008" target="_blank" class="btn-appt for-desktop">Book Appointment</a>
+
                     </div>
                     <div class="right-col">
                         <div id="desktopmap" class="googlemap" width="100%" height="400px"></div>
@@ -347,7 +361,6 @@
         <script src="js/vendor/jquery-ui.min.js"></script>
 
         <script src="fancybox/jquery.fancybox.pack.js"></script>
-        <script src="js/vendor/fancySelect.js"></script>
 
         <script src="js/vendor/parsley.min.js"></script>
 
@@ -553,20 +566,6 @@
                 {
                   directionsDisplay = new google.maps.DirectionsRenderer();
 
-                  //var elementmap = $('.for-mobile:visible').size() != 0 ? document.getElementById("mobilemap") : document.getElementById("desktopmap");
-                  /*
-                  map = new google.maps.Map(document.getElementById("mobilemap") ,mapProp);
-                  directionsDisplay.setMap(mobile_map);
-
-                  setMarker(new google.maps.LatLng(locations[0].lat, locations[0].lng), map, contentInfo1);
-                  setMarker(new google.maps.LatLng(locations[1].lat, locations[1].lng), map, contentInfo2);
-                  setMarker(new google.maps.LatLng(locations[2].lat, locations[2].lng), map, contentInfo3);
-
-                  var selected_location = new google.maps.LatLng(locations[0].lat, locations[0].lng);
-                  mobile_map.setCenter(selected_location);
-                  markers[0].infowindow.open(mobile_map, markers[0]);
-                    */
-
                   map = new google.maps.Map(document.getElementById("desktopmap") ,mapProp);
                   directionsDisplay.setMap(map);
 
@@ -584,7 +583,8 @@
                             current_marker.infowindow.close();
                         }
 
-                        var i = parseInt($('#bloodbanklist').val());
+                        //var i = parseInt($('#bloodbanklist').val());
+                        var i = parseInt($('.bloodbanks-style-list .selected').data('value'));
                         var selected_location = new google.maps.LatLng(locations[i].lat, locations[i].lng);
                         
                         //mobile_map.setCenter(selected_location);
@@ -598,11 +598,34 @@
                     }
                 };
 
-                $('#bloodbanklist').bind('change', function() {
+                $('.bloodbanks-style-list .selecteditem').on('click', function(e) {
+                    
+                    if ($(this).parent().find('ul').hasClass('opened'))
+                        $(this).parent().find('ul').removeClass('opened');    
+                    else
+                        $(this).parent().find('ul').addClass('opened');
+                });
+
+                $('.bloodbanks-style-list .selecteditem').html( $('.bloodbanks-style-list li:first').text() );
+                $('.bloodbanks-style-list ul li').on('click', function() {
+                    $('.bloodbanks-style-list ul li.selected').removeClass('selected');
+                    $('.bloodbanks-style-list .selecteditem').html( $(this).text() );
+                    
+                    $(this).parent().removeClass('opened');
+
+                    $(this).addClass('selected');
                     zoomtoplace();
                 });
 
-                $('#bloodbanklist').fancySelect();
+                $('html').click(function() {
+                    //Hide the menus if visible
+                    if ($('.bloodbanks-style-list .ul:visible'))
+                        $('.bloodbanks-style-list ul').removeClass('opened');    
+                });
+
+                $('.bloodbanks-style-list').on('click', function(e) {
+                    e.stopPropagation(); 
+                });
 
                 $('.section').each(function() {
                     var section = $(this);

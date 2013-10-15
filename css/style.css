@@ -229,6 +229,11 @@ a {
     padding-bottom: 10px;
     margin: 0px; }
 
+.scrolldown-icon {
+  background-image: url(../img/scroll_down_button.png);
+  background-repeat: no-repeat;
+  background-position: top right; }
+
 .st_sharethis_custom {
   display: block;
   width: 100%;
@@ -585,7 +590,10 @@ a {
     width: 249px;
     float: left; }
     .where .left-col .btn-appt {
-      display: block; }
+      display: block;
+      float: left;
+      clear: both;
+      margin-bottom: 5px; }
     .where .left-col p {
       font-size: 100%;
       line-height: 150%; }
@@ -612,9 +620,61 @@ a {
           width: 70%; }
         .where .left-col ul li .description:before {
           content: " - "; }
+    .where .left-col .view-all {
+      display: inline-block;
+      float: left;
+      clear: both;
+      margin-bottom: 10px; }
     .where .left-col select {
       margin-top: 20px;
       display: block; }
+    .where .left-col .bloodbanks-style-list {
+      width: 220px;
+      clear: both;
+      float: left;
+      color: #595753;
+      font-size: 13px;
+      text-align: left;
+      padding-right: 16px; }
+      .where .left-col .bloodbanks-style-list .selecteditem {
+        cursor: pointer;
+        width: 90%;
+        height: 20px;
+        background-color: #dcdbd7;
+        background-image: url(../img/select-list-icon.png);
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+        border: 1px solid #8B887E;
+        padding: 5%;
+        padding-top: 5px;
+        padding-bottom: 5px; }
+      .where .left-col .bloodbanks-style-list ul {
+        background-color: #dcdbd7;
+        position: absolute;
+        z-index: 2;
+        margin: 0px;
+        padding: 0px;
+        display: none;
+        width: 220px; }
+        .where .left-col .bloodbanks-style-list ul li {
+          margin: 0px;
+          padding: 0px;
+          clear: both;
+          width: 90%;
+          height: 22px;
+          padding: 5%;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          cursor: pointer;
+          line-height: 22px; }
+        .where .left-col .bloodbanks-style-list ul li.selected {
+          background-color: #b5b4af; }
+        .where .left-col .bloodbanks-style-list ul li:hover {
+          background-color: #b5b4af; }
+      .where .left-col .bloodbanks-style-list ul.closed {
+        display: none; }
+      .where .left-col .bloodbanks-style-list ul.opened {
+        display: block; }
   .where .right-col {
     display: inline-block;
     width: 850px;
@@ -1259,17 +1319,25 @@ a {
       margin-right: auto; }
     .where .left-col {
       width: 100%;
-      display: block; }
+      display: block;
+      padding-bottom: 10px; }
       .where .left-col select {
         display: block;
         margin-left: auto;
         margin-right: auto; }
       .where .left-col .btn-appt {
         display: none; }
+      .where .left-col .view-all {
+        float: none; }
       .where .left-col .googlemap {
         width: 100%;
         height: 350px;
         margin-top: 15px; }
+      .where .left-col .bloodbanks-style-list {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; }
     .where .right-col {
       width: 100%;
       display: block;
