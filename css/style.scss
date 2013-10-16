@@ -302,6 +302,7 @@ a {
 }
 
 .section {
+	width:100%;
 	padding-top: 35px;
 	padding-bottom: 35px;
 	
@@ -322,9 +323,21 @@ a {
 	width:39px;
 	height:39px;
 	display: block;
+	/*
 	position: relative;
 	top:-55px;
 	left:100%;
+	*/
+
+	float:right;
+	margin-top: -55px;
+	margin-right: 25px;
+
+	a {
+		display: inline-block;
+		width:100%;
+		height: inherit;
+	}
 }
 
 .st_sharethis_custom {
@@ -556,12 +569,13 @@ a {
 
 .release-hero {
 	background-color: #ebe9e3;
+	padding-left: 48px;
+	padding-right: 28px;
 
 	.inner-section {
 		background-image: url(../img/release-the-hero-image.png);
 		background-repeat: no-repeat;
 		background-position: 0px 230px;
-		padding-right: 48px;
 		height:660px;
 	}
 
@@ -593,6 +607,7 @@ a {
 	.right-col {
 		float:right;
 		width:820px;
+		padding-right: 30px;
 
 		.video-player {
 			width:820px;
@@ -1644,6 +1659,8 @@ a {
 	}
 
 	.release-hero {
+		padding-left: 0px;
+		padding-right: 0px;
 		display: block;
 
 		.inner-section {
@@ -1677,6 +1694,7 @@ a {
 		}
 
 		.right-col {
+			padding-right: 0px;
 			width:100%;
 			float:left;
 
@@ -1751,6 +1769,8 @@ a {
 	}
 
 	.where {
+		padding-left: 0px;
+		padding-right: 0px;
 		text-align: center;
 		height:auto;
 

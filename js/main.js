@@ -184,8 +184,7 @@ $(document).ready(function() {
 
 		} else {
 			$('.top-nav ul').hide();
-
-			if ($('.modal:visible'))
+			if ($('.modal:visible').size() > 0)
 				$('body').addClass('modal-show');
 		}
 	});

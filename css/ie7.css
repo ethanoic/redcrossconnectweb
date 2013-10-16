@@ -1,4 +1,10 @@
 /* IE7 Styles */
+.scrolldown-icon {
+  float: right;
+  margin-top: -55px;
+  margin-right: 25px;
+  position: static; }
+
 .how-app .app-links {
   padding-left: 16px; }
 
