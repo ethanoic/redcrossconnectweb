@@ -55,6 +55,8 @@ body {
 	line-height: 180%;
 	padding-top: 70px;
 	margin: 0px;
+	min-width:1200px;
+	max-width: 100%;
 
 	.page-container {
 		width:100%;
@@ -204,10 +206,10 @@ a {
 				background-position: -34px -30px;
 			}
 			.icon-faqs {
-				background-position: -65px -30px;
+				background-position: -95px -30px;
 			}
 			.icon-contact {
-				background-position: -95px -30px;
+				background-position: -65px -30px;
 			}
 		}
 		li:hover,
@@ -223,10 +225,10 @@ a {
 				background-position: -34px 0px;
 			}
 			.icon-faqs {
-				background-position: -65px 0px;
+				background-position: -95px 0px;
 			}
 			.icon-contact {
-				background-position: -95px 0px;
+				background-position: -65px 0px;
 			}
 		}
 	}
@@ -317,6 +319,12 @@ a {
 	background-image: url(../img/scroll_down_button.png);
 	background-repeat: no-repeat;
 	background-position: top right;
+	width:39px;
+	height:39px;
+	display: block;
+	position: relative;
+	top:-55px;
+	left:100%;
 }
 
 .st_sharethis_custom {
@@ -1173,7 +1181,6 @@ a {
 }
 
 .faq {
-	padding-left: 60px;
 	margin-top: -30px;
 
 	.left-col {
@@ -1207,6 +1214,7 @@ a {
 						padding-left: 24px;
 						background-position: left center;
 						color:grey;
+						height: auto;
 						text-decoration: none;
 						line-height: 100%;
 					}
@@ -1227,20 +1235,11 @@ a {
 }
 
 .category-section {
-
-	float:left;
 	width:100%;
 	padding-left: 0px;
 	padding-right: 0px;
 	padding-top: 55px;
 	padding-bottom: 55px;
-
-	.inner-section {
-		padding-left: 0px;
-		padding-right: 115px;
-		min-width: 970px;
-		width: 970px;
-	}
 
 	h2 {
 		font-weight: normal;
@@ -1249,19 +1248,27 @@ a {
 		text-transform: uppercase;
 	}
 
+	.faq-category-content {
+		padding-left: 35px;
+	}
+
 	ul.faqlist {
 		list-style: none;
 		padding: 0px;
 		margin: 0px;
+		display: inline-block;
+		width:100%;
 
 		li {
+			width:98.5%;
 			list-style: none;
+			display: inline-block;
 			padding: 0px;
 			margin: 0px;
 			background-image: url(../img/list-item.png);
 			background-repeat: no-repeat;
 			background-position: 0px 8px;
-			padding-left: 15px;
+			padding-left: 1.5%;
 
 			label {
 				font-weight: bold;
@@ -1272,6 +1279,9 @@ a {
 				display: none;
 			}
 		}
+	}
+
+	.back-to-top {
 	}
 
 }
@@ -1814,7 +1824,10 @@ a {
 	}
 
 	body {
+		padding-top: 0px;
+
 		.faq {
+			margin-top: 15px;
 			width:97%;
 			max-width:97%;
 			min-width: 97%;
@@ -1849,6 +1862,31 @@ a {
 			}
 		}
 
+		.category-section {
+
+			.faq-category-content {
+				padding-left: 10px;
+			}
+
+			ul.faqlist {
+
+				li {
+					width:97%;
+					padding-left: 3%%;
+
+					label {
+					}
+
+					div {
+					}
+				}
+			}
+
+			.back-to-top {
+			}
+
+		}
+
 	}
 
 	.modal {
@@ -1870,6 +1908,7 @@ a {
 				background: #ffffff;
 				padding: 1.5%;
 				height:700px;
+				margin-top:45px;
 
 				.close {
 					display: none;
@@ -1903,6 +1942,8 @@ a {
 
 			.modal-container {
 				.modal-box {
+					margin-top:0px;
+
 					.close {
 						display: none;
 					}

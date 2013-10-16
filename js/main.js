@@ -177,7 +177,6 @@ $(document).ready(function() {
 	$( window ).resize(function() {
 		// 768px breakpoint
 		if ($(window).width() >= 768) {
-			console.log('show menu');
 			$('.top-nav ul').show();
 
 			if ($('body').hasClass('modal-show'))
@@ -185,6 +184,9 @@ $(document).ready(function() {
 
 		} else {
 			$('.top-nav ul').hide();
+
+			if ($('.modal:visible'))
+				$('body').addClass('modal-show');
 		}
 	});
 

@@ -136,9 +136,9 @@
             </div>
 
             <div class="section release-hero">
-                <span class="scrolldown-icon"></span>
+                
                 <div class="inner-section">
-
+                    <span class="scrolldown-icon"></span>
                     <div class="inner-background">
                         <a name="video"></a>
                         <h1></h1>
@@ -222,6 +222,7 @@
 
             <div class="section where">
                 <div class="inner-section">
+                    <span class="scrolldown-icon"></span>
                     <a name="where"></a>
                     <h1><span class="redbold">Donate now.</span> 60 minutes of <br/>
                         your time can save 3 lives</h1>
@@ -247,19 +248,10 @@
 
                         <a href="https://www.google.com/calendar/embed?showCalendars=0&mode=AGENDA&showTitle=0&height=600&wkst=1&hl=en&bgcolor=%23FFFFFF&src=206u2ql56e9gkelav9rl3h0k34@group.calendar.google.com&color=%23528800&ctz=Asia/Singapore" target="_blank" class="view-all">View all</a>
 
-                        
-                        <select name="location" id="bloodbanklist" style="display:none;">
-                            <option value="">Select Blood Bank</option>
-                            <option value="0">Bloodbank@HSA</option>
-                            <option value="1">Bloodbank@Woodlands</option>
-                            <option value="2">Bloodbank@Dhoby Ghaut</option>
-                        </select>
-
                         <div class="bloodbanks-style-list">
-                            <div class="selecteditem">
+                            <div class="selecteditem" data-default="Select Blood Bank">
                             </div>
                             <ul>
-                                <li>Select Blood Bank</li>
                                 <li data-value="0">Bloodbank@HSA</li>
                                 <li data-value="1">Bloodbank@Woodlands</li>
                                 <li data-value="2">Bloodbank@Dhoby Ghaut</li>
@@ -598,6 +590,9 @@
                     }
                 };
 
+                console.log($('.bloodbanks-style-list .selecteditem').data('default'));
+                $('.bloodbanks-style-list .selecteditem').html( $('.bloodbanks-style-list .selecteditem').data('default') );
+
                 $('.bloodbanks-style-list .selecteditem').on('click', function(e) {
                     
                     if ($(this).parent().find('ul').hasClass('opened'))
@@ -606,7 +601,6 @@
                         $(this).parent().find('ul').addClass('opened');
                 });
 
-                $('.bloodbanks-style-list .selecteditem').html( $('.bloodbanks-style-list li:first').text() );
                 $('.bloodbanks-style-list ul li').on('click', function() {
                     $('.bloodbanks-style-list ul li.selected').removeClass('selected');
                     $('.bloodbanks-style-list .selecteditem').html( $(this).text() );

@@ -28,7 +28,9 @@ body {
   font-size: 0.875em;
   line-height: 180%;
   padding-top: 70px;
-  margin: 0px; }
+  margin: 0px;
+  min-width: 1200px;
+  max-width: 100%; }
   body .page-container {
     width: 100%; }
   body .inner-section {
@@ -148,9 +150,9 @@ a {
       .top-nav ul li .icon-where {
         background-position: -34px -30px; }
       .top-nav ul li .icon-faqs {
-        background-position: -65px -30px; }
-      .top-nav ul li .icon-contact {
         background-position: -95px -30px; }
+      .top-nav ul li .icon-contact {
+        background-position: -65px -30px; }
     .top-nav ul li:hover,
     .top-nav ul li.active {
       background-color: #b41419; }
@@ -165,10 +167,10 @@ a {
         background-position: -34px 0px; }
       .top-nav ul li:hover .icon-faqs,
       .top-nav ul li.active .icon-faqs {
-        background-position: -65px 0px; }
+        background-position: -95px 0px; }
       .top-nav ul li:hover .icon-contact,
       .top-nav ul li.active .icon-contact {
-        background-position: -95px 0px; }
+        background-position: -65px 0px; }
 
 .sticky-nav {
   width: 44px;
@@ -232,7 +234,13 @@ a {
 .scrolldown-icon {
   background-image: url(../img/scroll_down_button.png);
   background-repeat: no-repeat;
-  background-position: top right; }
+  background-position: top right;
+  width: 39px;
+  height: 39px;
+  display: block;
+  position: relative;
+  top: -55px;
+  left: 100%; }
 
 .st_sharethis_custom {
   display: block;
@@ -893,7 +901,6 @@ a {
     margin: 0px; }
 
 .faq {
-  padding-left: 60px;
   margin-top: -30px; }
   .faq .left-col {
     float: left;
@@ -923,6 +930,7 @@ a {
             padding-left: 24px;
             background-position: left center;
             color: grey;
+            height: auto;
             text-decoration: none;
             line-height: 100%; }
   .faq .cover-img {
@@ -934,34 +942,34 @@ a {
     background-position: 0px 0px; }
 
 .category-section {
-  float: left;
   width: 100%;
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 55px;
   padding-bottom: 55px; }
-  .category-section .inner-section {
-    padding-left: 0px;
-    padding-right: 115px;
-    min-width: 970px;
-    width: 970px; }
   .category-section h2 {
     font-weight: normal;
     color: #000000;
     font-family: 'ITCAvantGardeStd-Bk';
     text-transform: uppercase; }
+  .category-section .faq-category-content {
+    padding-left: 35px; }
   .category-section ul.faqlist {
     list-style: none;
     padding: 0px;
-    margin: 0px; }
+    margin: 0px;
+    display: inline-block;
+    width: 100%; }
     .category-section ul.faqlist li {
+      width: 98.5%;
       list-style: none;
+      display: inline-block;
       padding: 0px;
       margin: 0px;
       background-image: url(../img/list-item.png);
       background-repeat: no-repeat;
       background-position: 0px 8px;
-      padding-left: 15px; }
+      padding-left: 1.5%; }
       .category-section ul.faqlist li label {
         font-weight: bold;
         cursor: pointer; }
@@ -1353,31 +1361,39 @@ a {
     .facebook .footer-image {
       display: none; }
 
-  body .faq {
-    width: 97%;
-    max-width: 97%;
-    min-width: 97%;
-    padding-left: 1.5%;
-    padding-right: 1.5%; }
-    body .faq .left-col {
-      width: 100%; }
-      body .faq .left-col h1 {
-        font-size: 2.5em;
-        text-align: center; }
-    body .faq .cover-img {
-      display: none; }
-  body .category-section {
-    float: left;
-    width: 97%;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-    padding-top: 20px;
-    padding-bottom: 20px; }
-    body .category-section .inner-section {
-      padding-left: 0px;
-      padding-right: 0px;
-      min-width: 100%;
-      width: 100%; }
+  body {
+    padding-top: 0px; }
+    body .faq {
+      margin-top: 15px;
+      width: 97%;
+      max-width: 97%;
+      min-width: 97%;
+      padding-left: 1.5%;
+      padding-right: 1.5%; }
+      body .faq .left-col {
+        width: 100%; }
+        body .faq .left-col h1 {
+          font-size: 2.5em;
+          text-align: center; }
+      body .faq .cover-img {
+        display: none; }
+    body .category-section {
+      float: left;
+      width: 97%;
+      padding-left: 1.5%;
+      padding-right: 1.5%;
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      body .category-section .inner-section {
+        padding-left: 0px;
+        padding-right: 0px;
+        min-width: 100%;
+        width: 100%; }
+    body .category-section .faq-category-content {
+      padding-left: 10px; }
+    body .category-section ul.faqlist li {
+      width: 97%;
+      padding-left: 3%%; }
 
   .modal {
     position: fixed;
@@ -1394,7 +1410,8 @@ a {
         width: 97%;
         background: #ffffff;
         padding: 1.5%;
-        height: 700px; }
+        height: 700px;
+        margin-top: 45px; }
         .modal .modal-container .modal-box .close {
           display: none; }
         .modal .modal-container .modal-box .content {
@@ -1414,8 +1431,10 @@ a {
     display: block;
     top: 60px;
     z-index: 1000; }
-    .contact .modal .modal-container .modal-box .close {
-      display: none; }
+    .contact .modal .modal-container .modal-box {
+      margin-top: 0px; }
+      .contact .modal .modal-container .modal-box .close {
+        display: none; }
 
   .for-mobile {
     display: block; }
