@@ -1033,6 +1033,9 @@ a {
   body {
     padding-top: 45px; }
 
+  .scrolldown-icon {
+    display: none; }
+
   .form1 {
     padding: 0px;
     width: 97.5%;

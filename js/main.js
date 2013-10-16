@@ -189,6 +189,14 @@ $(document).ready(function() {
 		}
 	});
 
+	$('.scrolldown-icon a').on('click', function() {
+		$('html, body').animate({
+	        scrollTop: $('a[name="' + $(this).attr('href').replace('#', '') + '"]').parent().offset().top - 75
+	    }, {
+	    	duration: 500,
+	    	specialEasing: 'easeInOutQuint'
+	    });
+	});
 
 	$('.top-nav li a, .sticky-nav li a, .video-link').on('click', function(e) {
 		$('.top-nav li.active').removeClass('active');
