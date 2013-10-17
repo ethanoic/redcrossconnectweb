@@ -59,16 +59,15 @@
             </div>
 
             <div class="section how-app">
+                <a name="how"></a>
                 <div class="inner-section">
-                
-                    <a name="how"></a>
 
                     <div class="cta-share site-share">
                         <span class="st_sharethis_custom"
                            st_title="Join the Red Cross Connection"    
                            st_url="http://connect.redcross.sg/"
                            st_summary="Be part of a network of lifesavers with Red Cross Connection. Share blood alerts to help find donors and save lives."
-                           st_image="img/200x200.jpg"></span>
+                           st_image="img/fbshare_howitworks_thumb.jpg"></span>
                     </div>
                     
                     <div class="title-text">
@@ -136,11 +135,11 @@
             </div>
 
             <div class="section release-hero">
-                
+                <a name="video"></a>
                 <div class="inner-section">
                     <span class="scrolldown-icon"><a href="#video"></a></span>
                     <div class="inner-background">
-                        <a name="video"></a>
+                        
                         <h1></h1>
                         <div class="right-col">
                             <div class="video-player">
@@ -158,7 +157,7 @@
                                    st_title="Download the Red Cross Connection"    
                                    st_url="http://connect.redcross.sg/#video"
                                    st_summary="We're all connected by blood and you can help it get to where it's needed most with this app. Find out how it works in this short video."
-                                   st_image="http://img.youtube.com/vi/rY4PCajYhVc/0.jpg"></span>
+                                   st_image="img/fbshare_video_thumb.jpg"></span>
                             </div>
                         </div>
                     </div>
@@ -221,9 +220,10 @@
             </div>
 
             <div class="section where">
+                <a name="where"></a>
                 <div class="inner-section">
                     <span class="scrolldown-icon"><a href="#where"></a></span>
-                    <a name="where"></a>
+                    
                     <h1><span class="redbold">Donate now.</span> 60 minutes of <br/>
                         your time can save 3 lives</h1>
                     <div class="left-col">
@@ -630,17 +630,17 @@
                         max: section_position.top + $(this).height(),
                         onEnter : function(element, position) {
 
-                            var anchor = $(section).find('a').attr('name');
+                            var anchor = $(element).find('a').attr('name');
                             if (typeof anchor === 'undefined') {
-                                anchor = $(section).prev().find('a').attr('name');
+                                anchor = $(element).prev().find('a').attr('name');
                             }
-
+                            console.log(anchor);
                             $('.sticky-nav .active').removeClass('active');
                             $('.sticky-nav a[href="#' + anchor + '"]').addClass('active');
 
                             $('.top-nav .active').removeClass('active');
 
-                            if ($(section).hasClass('release-hero') || $(section).hasClass('bloodstats') ) {
+                            if ($(element).hasClass('release-hero') || $(element).hasClass('bloodstats') ) {
                                 $('.top-nav a[href="#how"]').parent().addClass('active');
                             } else {
                                 $('.top-nav a[href="#' + anchor + '"]').parent().addClass('active');

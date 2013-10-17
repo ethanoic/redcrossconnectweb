@@ -173,6 +173,8 @@ $(document).ready(function() {
 
 	var image_path = $('.site-share .st_sharethis_custom').attr('st_image');
 	$('.site-share .st_sharethis_custom').attr('st_image', 'http://' + window.location.host + '/' + path + image_path);
+	image_path = $('.video-share .st_sharethis_custom').attr('st_image');
+	$('.video-share .st_sharethis_custom').attr('st_image', 'http://' + window.location.host + '/' + path + image_path);
 
 	$( window ).resize(function() {
 		// 768px breakpoint
