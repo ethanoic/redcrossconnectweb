@@ -916,7 +916,8 @@ a {
   margin-top: -30px; }
   .faq .left-col {
     float: left;
-    width: 680px; }
+    width: 650px;
+    padding-left: 30px; }
     .faq .left-col h1 {
       padding: 0px;
       color: #b0aea8;
@@ -999,7 +1000,8 @@ a {
 /* responsive break points */
 @media only screen and (max-width: 768px) {
   body {
-    min-width: 320px; }
+    min-width: 320px;
+    padding-top: 35px; }
     body .page-container {
       max-width: 1200px;
       min-width: 320px;
@@ -1381,39 +1383,37 @@ a {
     .facebook .footer-image {
       display: none; }
 
-  body {
-    padding-top: 0px; }
-    body .faq {
-      margin-top: 15px;
-      width: 97%;
-      max-width: 97%;
-      min-width: 97%;
-      padding-left: 1.5%;
-      padding-right: 1.5%; }
-      body .faq .left-col {
-        width: 100%; }
-        body .faq .left-col h1 {
-          font-size: 2.5em;
-          text-align: center; }
-      body .faq .cover-img {
-        display: none; }
-    body .category-section {
-      float: left;
-      width: 97%;
-      padding-left: 1.5%;
-      padding-right: 1.5%;
-      padding-top: 20px;
-      padding-bottom: 20px; }
-      body .category-section .inner-section {
-        padding-left: 0px;
-        padding-right: 0px;
-        min-width: 100%;
-        width: 100%; }
-    body .category-section .faq-category-content {
-      padding-left: 10px; }
-    body .category-section ul.faqlist li {
-      width: 97%;
-      padding-left: 3%%; }
+  body .faq {
+    width: 97%;
+    max-width: 97%;
+    min-width: 97%;
+    padding-left: 1.5%;
+    padding-right: 1.5%; }
+    body .faq .left-col {
+      width: 95%;
+      margin-left: 5%; }
+      body .faq .left-col h1 {
+        font-size: 2.5em;
+        text-align: center; }
+    body .faq .cover-img {
+      display: none; }
+  body .category-section {
+    float: left;
+    width: 97%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    body .category-section .inner-section {
+      padding-left: 0px;
+      padding-right: 0px;
+      min-width: 100%;
+      width: 100%; }
+  body .category-section .faq-category-content {
+    padding-left: 10px; }
+  body .category-section ul.faqlist li {
+    width: 97%;
+    padding-left: 3%%; }
 
   .modal {
     position: fixed;
