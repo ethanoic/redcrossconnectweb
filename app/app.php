@@ -28,7 +28,6 @@ if (isset($_POST['email'])) {
 	$mail->AddAddress('enquiry@redcross.org.sg', 'Red Cross Connection');
 	$mail->AddAddress($_POST['email'], $_POST['name']);
 	$mail->addCC('christy.goh@mrmworldwide.com');
-	$mail->addCC('ethan.ccj@gmail.com');
 	
 	if($mail->Send()) {
 	   echo "result=0";
