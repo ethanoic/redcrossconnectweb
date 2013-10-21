@@ -80,12 +80,7 @@
                             </h1>
                             
                             <p>One blood donation helps save 3 lives. But reaching out to potential donors can save countless more. With Red Cross Connection, you'll receive alerts when blood is needed, and can make a big difference by simply choosing to share.</p>
-
-<p>
-Sign up now to receive an email alert when this app is available and be among the first lifesavers on the network.
-</p>
-
-							</div>
+                        </div>
 
                         <div class="app-screen">
                             <img src="img/app-screen.png" />
@@ -97,72 +92,10 @@ Sign up now to receive an email alert when this app is available and be among th
 
                         </div>
 
-<script purpose="Include" src="js/emailcheck.js"></script>
-<script language="javascript">
-<!--
-function trim(s) {
-	s = s.replace(/(^\s*)|(\s*$)/gi,"");
-	s = s.replace(/[ ]{2,}/gi," ");
-	s = s.replace(/\n /,"\n");
-	return s;
-}
-
-function validateForm(form)
-{
-	var strField = "";
-	var focus_to = "";
-	var focus_value = false;
-
-	if (trim(form.emailaddress.value) == "")
-	{
-			strField += "- Email \n\n"; 
-			focus_to = form.emailaddress;
-			focus_value =true;
-	}
-
-
-if(!document.getElementById('agreetoreceivealerts').checked){
-			strField += "- I agree to receive alerts from Singapore Red Cross \n\n"; 
-		if(focus_value != true) {
-		  focus_to = form.agreetoreceivealerts;
-		  focus_value =true;
-		}
-}
-
-	if (strField.length != 0) 
-		 {
-			alert("Please complete the following fields:\n\n" + strField );
-			focus_to.focus();
-			return false;
-		 }	
-		
-		if(form.emailaddress.value != "" && (!emailCheck(form.emailaddress.value,""))) {
-			form.emailaddress.focus();
-			return false; 
-		}
-		return true;
-}
-
-//-->
-</script>
-
-<div class="app-links">
-<form action="signup/index2.php" method="POST" target=_blank onSubmit="return validateForm(this);">
-<div>
-<input onClick="if(this.value=='Email')this.value='';" onBlur="if(this.value=='')this.value='Email';" type="text" name="emailaddress" 
-value="Email" style="padding-left:10px; height:30px; width:75%;">
-</div>
-
-<div style="padding-top:10px;padding-bottom:10px;">
-<input type="image" alt="Submit" title="Submit" src="signup/img/btn_submit.png">
-</div>
-<div>
-<input type="checkbox" 
- name="agreetoreceivealerts" checked id="agreetoreceivealerts" value="I-agree-to-receive-alerts-from-Singapore-Red-Cross"> &nbsp;I agree to receive alerts from Singapore Red Cross
-</div>
-
-</form>
-</div>
+                        <div class="app-links">
+                            <a href="#"><img src="img/btn_appstore.png" /></a>
+                            <a href="#"><img src="img/btn_googleplay.png" width="119" /></a>
+                        </div>
 
                         <div class="watch-video-col">
                             <div class="watch-video">

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Red Cross Connection</title>
+
+        <meta property="og:title" content="Red Cross Connection"/>
+        <meta property="og:image" content="img/a-pack.png">   
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="icon" type="image/ico" href="favicon.ico"/>
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="fancybox/jquery.fancybox.css">
+
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" href="css/ie7.css">
+        <![endif]-->
+
+        <!--[if IE 8]>
+        <link rel="stylesheet" href="css/ie8.css">
+        <![endif]-->
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <div class="page-container">
+            <div class="section bloodstats">
+                <div class="inner-section">
+                    <div class="inner-block">
+                        <div class="right-col">
+
+                            <ul>
+                                <li class="blood-type-stat blood-a">
+                                    <h3>Type <span class="bloodtype">A</span></h3>
+                                    <div class="chart-container">
+                                        <div class="markers"></div>
+                                        <div class="status"><label></label></div>
+                                        <div class="chart"></div>
+                                    </div>
+                                </li>
+                                <li class="blood-type-stat blood-b">
+                                    <h3>Type <span class="bloodtype">B</span></h3>
+                                    <div class="chart-container">
+                                        <div class="markers"></div>
+                                        <div class="status"><label></label></div>
+                                        <div class="chart"></div>
+                                    </div>
+                                </li>
+                                <li class="blood-type-stat blood-ab">
+                                    <h3>Type <span class="bloodtype">AB</span></h3>
+                                    <div class="chart-container">
+                                        <div class="markers"></div>
+                                        <div class="status"><label></label></div>
+                                        <div class="chart"></div>
+                                    </div>
+                                </li>
+                                <li class="blood-type-stat blood-o">
+                                    <h3>Type <span class="bloodtype">O</span></h3>
+                                    <div class="chart-container">
+                                        <div class="markers"></div>
+                                        <div class="status"><label></label></div>
+                                        <div class="chart"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=128587850676076";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="js/vendor/excanvas.js"></script>
+        <![endif]-->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="js/vendor/jquery-ui.min.js"></script>
+
+        <script src="fancybox/jquery.fancybox.pack.js"></script>
+
+        <script src="js/vendor/parsley.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.easypiechart.js"></script>
+        
+        <script type='text/javascript' src='js/vendor/jquery-scrollspy.js'></script>
+
+
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA3GNgLX_NhhiEKAiy716EomMg_DwGZ_1s&sensor=false"></script>
+
+        <script type="text/javascript">var switchTo5x=true;</script>
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">
+        if (stLight!=undefined) {
+            stLight.options({ publisher: "e34cc7a5-219c-4111-8ad0-344853a9e716", 
+                doNotHash: true, 
+                doNotCopy: true, 
+                hashAddressBar: false, 
+                onhover: false, 
+                shorten:false, 
+                st_title:"Red Cross Connection" })
+        }
+        </script>
+        
+        <script src="js/main.js"></script>
+
+
+        <script>
+
+        $(document).ready(function() {
+            initcharts();
+        });
+
+        var initcharts = function() {
+            maxwidth = $('html').css('max-width');
+            if (maxwidth == '767px') {
+                var chartsize = 70;
+                var lineChartWidth = 8;
+            } else {
+                var chartsize = 125;
+                var lineChartWidth = 15;
+            }
+
+            var setbloodstat_text = function(bloodpercent) {
+                var text = '';
+                switch (bloodpercent) {
+                    case '25' : 
+                        text = 'very<br/>low';
+                        break;
+                    case '50' : 
+                        text = 'low';
+                        break;
+                    case '75' : 
+                        text = 'healthy';
+                        break;
+                }
+                return text;
+            };
+
+            var bloodstat = new Array();
+
+            $.ajax({
+                type:"GET",
+                url: "app/app.php?method=bloodstat",
+                success: function(data){
+
+                    // hard code for now until the php to google spreadsheet is fixed
+                    data = '25-25-75-25-10/11/2013';
+                    bloodstat = data.split('-');
+
+                    //$('.blood-a .chart').attr('data-percent', bloodstat[0]);
+                    //$('.blood-b .chart').attr('data-percent', bloodstat[1]);
+                    //$('.blood-o .chart').attr('data-percent', bloodstat[2]);
+                    //$('.blood-ab .chart').attr('data-percent', bloodstat[3]);
+
+                    $('.blood-a .status label').html( setbloodstat_text(bloodstat[0]) );
+                    $('.blood-b .status label').html( setbloodstat_text(bloodstat[1]) );
+                    $('.blood-o .status label').html( setbloodstat_text(bloodstat[2]) );
+                    $('.blood-ab .status label').html( setbloodstat_text(bloodstat[3]) );
+
+                    $('.blood-a .chart').addClass( setbloodstat_text(bloodstat[0]).replace('<br/>','-') );
+                    $('.blood-b .chart').addClass( setbloodstat_text(bloodstat[1]).replace('<br/>','-') );
+                    $('.blood-o .chart').addClass( setbloodstat_text(bloodstat[2]).replace('<br/>','-') );
+                    $('.blood-ab .chart').addClass( setbloodstat_text(bloodstat[3]).replace('<br/>','-') );
+
+                    var chart = $('.chart').easyPieChart({
+                        animate: 2000,
+                        lineWidth: lineChartWidth,
+                        barColor: '#c1272c',
+                        trackColor:'#e1e1e1',
+                        scaleColor: false,
+                        size: chartsize,
+                        clockwise: false
+                    });
+
+                    $('.blood-a .chart').data('easyPieChart').update(bloodstat[0]);
+                    $('.blood-b .chart').data('easyPieChart').update(bloodstat[1]);
+                    $('.blood-o .chart').data('easyPieChart').update(bloodstat[2]);
+                    $('.blood-ab .chart').data('easyPieChart').update(bloodstat[3]);
+                }
+            });
+        }
+        </script>
+    </body>
+</html>
