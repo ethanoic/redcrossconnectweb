@@ -218,7 +218,7 @@ value="Email" style="padding-left:10px; height:30px; width:75%;">
                                     <!--
                                     width="820" height="415" 
                                     -->
-                                    <iframe src="//www.youtube.com/embed/rY4PCajYhVc?rel=0&wmode=opaque&autohide=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                    <iframe src="//www.youtube.com/embed/IA8HdI3Q-dI?rel=0&wmode=opaque&autohide=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
                                 </div>
                                 <h2>
                                     Together, we can<br/>
@@ -487,8 +487,6 @@ value="Email" style="padding-left:10px; height:30px; width:75%;">
                 url: "app/app.php?method=bloodstat",
                 success: function(data){
 
-                    // hard code for now until the php to google spreadsheet is fixed
-                    data = '25-25-75-25-10/11/2013';
                     bloodstat = data.split('-');
 
                     $('.blood-a .chart').attr('percent', bloodstat[0]);
@@ -524,7 +522,10 @@ value="Email" style="padding-left:10px; height:30px; width:75%;">
 
         $(document).ready(function() {
 
-            var appid = location.href.indexOf('rain-works') >= 0 ? '416858361769897' : ( location.href.indexOf('localdev') >= 0 ? '589020897824050' : '128587850676076') ;
+            var appid = location.href.indexOf('rain-works') >= 0 ? '416858361769897' : 
+                ( location.href.indexOf('localdev') >= 0 ? '589020897824050' : 
+                    (location.href.indexOf('rhcloud.com') >= 0 ? '1403805813186758' : '128587850676076')
+                ) ;
 
             (function(d, s, id) {
               var js, fjs = d.getElementsByTagName(s)[0];
